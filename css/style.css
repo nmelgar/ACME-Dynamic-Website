@@ -1,0 +1,53 @@
+/* TEXT #000000 -->Black
+    BLUE LINKS #0000ee -->Blue
+    NOT SURE #808080 -->Grey
+    ACME ROCKET #990033 -->Marron
+    NAV BAR #de2226 -->Red
+    WHITE #ffffff -->White
+
+
+*/
+
+.navigation { 
+    background: #de2226;
+    list-style: none;
+    margin: 0;
+/*    overflow: auto;*/
+    
+    display:flex;
+    justify-content:flex-start;
+}
+
+
+
+.navigation li{
+/*    float: left;*/
+   
+
+}
+
+.navigation a{
+    
+    color: #ffffff;
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+@media (max-width: 500px){
+    .navigation {
+        flex-flow: column wrap;
+        padding: 0;
+    }
+
+}
+
+.navigation li:hover{
+    background: #ffffff;
+}
+
+.navigation a:hover{
+    color:red;
+}
+
+
