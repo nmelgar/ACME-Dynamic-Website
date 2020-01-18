@@ -9,12 +9,56 @@
 */
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Meera+Inimai&display=swap');
 
 body{
     background-image: url(../images/site/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#logo{
+    height: auto;
+    width: 120px;
+}
+#account{
+    height: auto;
+    width: 25px;
+}
+
+.header{
+    overflow: hidden;
+    padding: 10px 10px;
+    height: 25%;
+}
+
+.header-left{
+    float: left;
+    width: 50%;
+}
+
+.header-right a{
+    float: right;
+    padding: 12px;
+    padding-top: 25px;
+    text-decoration: none;
+    font-size: 18px; 
+}
+
+.header-left a{
+    float: left;
+    text-align: left;
+    padding: 12px;
+}
+
+.header-right{
+    float: right;
+    width: 50%;
+    
+}
+
+
+
 
 #container{
     background: #ffffff;
@@ -32,6 +76,7 @@ body{
 /*    overflow: auto;*/
     
     display:flex;
+    font-family: 'Meera Inimai', sans-serif;
     justify-content:flex-start;
 }
 
@@ -67,10 +112,20 @@ body{
     color:red;
 }
 
+/*--HEADINGS (H1, H2, H3)--*/
+
+h1{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin: 10px;
+}
+
+/*--FOOTER--*/
+
 footer{
     background: #ffffff;
     border-top: solid 4px #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
     margin: 8px;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
 
