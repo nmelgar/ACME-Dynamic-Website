@@ -8,6 +8,23 @@
 
 */
 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    background-image: url(../images/site/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container{
+    background: #ffffff;
+    margin: 0 auto;
+    max-width: 960px;
+    height: auto;
+    
+    
+}
+
 .navigation { 
     background: #de2226;
     list-style: none;
@@ -50,4 +67,10 @@
     color:red;
 }
 
+footer{
+    background: #ffffff;
+    border-top: solid 4px #000000;
+    margin: 8px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 
