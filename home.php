@@ -1,54 +1,24 @@
 <!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>ACME</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
     <body>
         <div id="container">
-            <header>
-                <nav>
-                                
-                </nav>
+            <header> <?php include $_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php'; ?> 
             </header>
             <main>
-                <h1>Welcome to Acme!</h1>
-                <section id="coyoterocket">
-                    <figure>
-                        <img src="images/site/rocketfeature.jpg" alt="A coyote riding a rocket">
-                    </figure>
-                    <div id="coyoterocket-content">
-                        <ul>
-                            <li><h2>Acme Rocket</h2></li>
-                            <li>Quick lighting fuse</li>
-                            <li>NHTSA approved seat belts</li>
-                            <li>Mobile launch stand included</li>
-                            <li><a href="/acme/cart/"><img id="actionbtn" alt="Add to cart button" src="images/site/iwantit.gif"></a></li>
-                        </ul>
-                    </div>
-                </section>
+                <h1>Content Title Here</h1>
             </main>
 
-            <!--RECIPES SECTION----------------->
-            <section class="recipes">
+ 
+            <footer> <?php include $_SERVER['DOCUMENT_ROOT'] . '/acme/common/footer.php'; ?>
+            </footer>
 
-            </section>
-
-            <!--REVIEWS SECTION----------------->
-            <section class="reviews">
-                <h3>Acme Rocket Reviews</h3>
-                <ul>
-                    <li>"I don't know how I ever caught roadrunners before this." (4/5)</li>
-                    <li>"That thing was fast!" (4/5)</li>
-                    <li>"Talk about fast delivery." (5/5)</li>
-                    <li>"I didn't even have to pull the meat apart." (4.5/5)</li>
-                    <li>"I'm on my thirtieth one. I love these things!" (5/5)</li>
-                </ul>
-
-            </section>
-            <section class="recipes">
-
-            </section>
         </div>
     </body>
+</html>

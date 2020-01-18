@@ -10,27 +10,7 @@
     <body>
         <div id="container">
             <header>
-                <div class="header">
-                    <div class="header-left">
-                        <a href="#" class="logo"><img id="logo" src="images/site/logo.gif" alt="Acme logo"></a>
-                    </div>    
-                    <div class="header-right">
-                        <a href="#" class="account"><img id="account" src="images/site/account.gif"> My Account</a>
-                    </div>
-                
-                
-                </div>
-                <nav>
-                    <ul class="navigation">
-                      <li><a class="active" href="#home">Home</a></li>
-                      <li><a href="#cannon">Cannon</a></li>
-                      <li><a href="#explosive">Explosive</a></li>
-                      <li><a href="#misc">Misc</a></li>
-                      <li><a href="#Rocket">Rocket</a></li>
-                      <li><a href="#Trap">Trap</a></li>
-                    </ul>
-                                
-                </nav>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/acme/common/header.php'; ?> 
             </header>
             <main>
                 <h1>Content Title Here</h1>
@@ -38,9 +18,7 @@
 
  
             <footer>
-                &copy; ACME, All rights reserved. <br/>
-                All images used are believed to be in "Fair Use". Please notify the author if any are not and they will be removed.<br/>
-                Last Updated: 18 January, 2020
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/acme/common/footer.php'; ?>
             </footer>
 
         </div>
