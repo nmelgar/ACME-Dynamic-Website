@@ -125,9 +125,73 @@ body{
 h1{
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin: 10px;
+    margin-bottom: -3px
+}
+
+h2{
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    margin: 0;
 }
 
 /*--FOOTER--*/
+
+/*--COYOTE ROCKET CONTENT*/
+
+.coyoterocket{
+   padding: 10px 10px;
+    
+}
+.coyoterocket ul{
+    color: #de2226;
+    position: absolute;
+    text-align: left;
+    padding: 0;
+    left: 55%;
+    top: 35%;
+    top: 16em;
+    
+}
+
+@media (max-width: 500px){
+    .coyoterocket ul {
+    color: #de2226;
+    position: absolute;
+    text-align: left;
+    padding: 0;
+    left: 55%;
+    top: 33em;
+
+    }
+
+}
+
+/*.coyoterocket-content ul{*/
+/*    list-style: none;*/
+/*}*/
+
+.iwantit{
+    max-width: 80%;
+    
+}
+
+.coyoterocket ul{
+    list-style: none;
+}
+
+
+main{
+/*    overflow: hidden;*/
+    padding: 10px 10px;    
+}
+
+.coyotecontainer{
+}
+    
+.coyoteimage{
+    max-width: 100%;
+    max-height: 100%;
+}
+
 
 footer{
     background: #ffffff;
