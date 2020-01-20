@@ -149,35 +149,11 @@ h2{
 }
 .coyoterocket ul{
     color: #de2226;
-    position: absolute;
     text-align: left;
     padding: 0;
-    left: 55%;
-    top: 35%;
-    top: 16em;
-    
 }
-
-@media (max-width: 500px){
-    .coyoterocket ul {
-    color: #de2226;
-    position: absolute;
-    text-align: left;
-    padding: 0;
-    left: 55%;
-    top: 33em;
-
-    }
-
-}
-
-/*.coyoterocket-content ul{*/
-/*    list-style: none;*/
-/*}*/
 
 .iwantit{
-    max-width: 80%;
-    
 }
 
 .coyoterocket ul{
@@ -186,7 +162,7 @@ h2{
 
 
 main{
-/*    overflow: hidden;*/
+    overflow: hidden;
     padding: 10px 10px;    
 }
 
@@ -194,23 +170,24 @@ main{
 }
     
 .coyoteimage{
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
 }
 
 /*---SECTIONS--*/
     /*CREATES TWO COLUMNS*/
 .column{
-     float: left;
-    width: 50%;
-    padding: 10px 20PX;
+    float: left;
     height: 300px;
+    overflow: hidden;
+    padding: 10px 20PX;
+    width: 50%;
 }
 
 .row:after {
+  clear: both;
   content: "";
   display: table;
-  clear: both;
 }
 
 
