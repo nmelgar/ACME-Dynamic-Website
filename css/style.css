@@ -1,4 +1,6 @@
-/* TEXT #000000 -->Black
+/* 
+
+    TEXT #000000 -->Black
     BLUE LINKS #0000ee -->Blue
     NOT SURE #808080 -->Grey
     ACME ROCKET #990033 -->Marron
@@ -12,6 +14,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Meera+Inimai&display=swap');
 
+
+*{
+    box-sizing: border-box;
+}
 
 body{
     background-image: url(../images/site/background.jpg);
@@ -192,7 +198,23 @@ main{
     max-height: 100%;
 }
 
+/*---SECTIONS--*/
+    /*CREATES TWO COLUMNS*/
+.column{
+     float: left;
+    width: 50%;
+    padding: 10px 20PX;
+    height: 300px;
+}
 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/*FOOTER*/
 footer{
     background: #ffffff;
     border-top: solid 4px #000000;
