@@ -46,9 +46,9 @@ body{
 }
 
 .header{
+    height: 25%;
     overflow: hidden;
     padding: 10px 10px;
-    height: 25%;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
@@ -59,10 +59,10 @@ body{
 
 .header-right a{
     float: right;
+    font-size: 18px; 
     padding: 12px;
     padding-top: 25px;
     text-decoration: none;
-    font-size: 18px; 
 }
 
 .header-right a:visited{
@@ -102,7 +102,6 @@ body{
 }
 
 .navigation a{
-    
     color: #ffffff;
     display: block;
     padding: 0.8em;
@@ -110,7 +109,7 @@ body{
 }
 
 
-@media (max-width: 500px){
+@media only screen and (max-width: 600px){
     .navigation {
         flex-flow: column wrap;
         padding: 0;
@@ -129,8 +128,8 @@ body{
 /*--HEADINGS (H1, H2, H3)--*/
 
 h1{
-    font-size: 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 40px;
     margin: -10px 10px -3px 10px;
 }
 
@@ -140,19 +139,23 @@ h2{
 }
 
 h3{
-    font-weight: black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: left;
+    margin: 5px;
 }
 
 /*--MAIN AND COYOTE ROCKET CONTENT--------------*/
 
 .coyoterocket{
-   padding: 10px 10px;
+    padding: 10px 10px;
     position: relative;
     
 }
 .coyoterocket ul{
-    font-size: 150%;
     color: #de2226;
+    font-size: 150%;
     text-align: left;
     padding: 0;
 }
@@ -166,15 +169,15 @@ h3{
 
 .coyotetext-block{
     position: absolute;
-    top: 25px;
     right: 25px;
+    top: 25px;
 }
 
 @media only screen and (max-width: 600px){
     .coyotetext-block{
         position: absolute;
-        top: 20px;
         right: 20px;
+        top: 20px;
     }
     .coyoterocket ul{
         font-size: 110%;
@@ -189,11 +192,10 @@ h3{
 
 main{
     overflow: hidden;
-    padding: 10px 10px;    
+    padding: 10px 10px;
+    margin-bottom: -30px;
 }
 
-.coyotecontainer{
-}
     
 .coyoteimage{
     height: auto;
@@ -204,7 +206,7 @@ main{
     /*CREATES TWO COLUMNS*/
 .column{
     float: left;
-    height: 300px;
+    height: 320px;
     overflow: hidden;
     padding: 10px 20PX;
     width: 50%;
@@ -216,9 +218,42 @@ main{
   display: table;
 }
 
-table figcaption a{
+#right-right li{
+    font-size:20px;
+}
+
+@media only screen and (max-width: 600px){
+    .column{
+        width: 100%;
+        height: 300px;
+    }
+    
+    #right-right{
+        height: 250px;
+        margin: auto;
+    }
+    
+    #left-section table{
+        margin: auto;
+    }
+}
+
+table{
+    overflow: visible;
+    padding: 10px;
+}
+
+table tr {
+    padding: 10px;
+}
+
+table th{
+    background: #808080;
+    padding: 10px;
+}
+table a{
+    color: darkblue;
     font-size: 14px;
-    text-decoration: none;
 }
 
 
