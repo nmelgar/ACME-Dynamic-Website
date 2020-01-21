@@ -15,6 +15,8 @@
 @import url('https://fonts.googleapis.com/css?family=Meera+Inimai&display=swap');
 
 
+
+/*--ALL AND BODY----------------------------------*/
 *{
     box-sizing: border-box;
 }
@@ -32,7 +34,7 @@ body{
     height: auto;
 }
 
-/*--HEADER--*/
+/*--HEADER-----------------------------------------*/
     /*--LOGO AND LOGIN--*/
 #logo{
     height: auto;
@@ -70,6 +72,7 @@ body{
 .header-right a:link{
     color: black;
 }
+
 .header-left a{
     float: left;
     text-align: left;
@@ -83,7 +86,7 @@ body{
 }
 
 
-/*--NAVIGATION*/
+/*--NAVIGATION------------------------------------*/
 .navigation {
     background: #de2226;
     display:flex;
@@ -96,7 +99,6 @@ body{
 
 .navigation li{
     font-size: 20px;
-/*    float: left;*/
 }
 
 .navigation a{
@@ -113,12 +115,10 @@ body{
         flex-flow: column wrap;
         padding: 0;
     }
-
 }
 
 .navigation li:hover{
     background: #ffffff;
-    
 }
 
 .navigation a:hover{
@@ -129,9 +129,9 @@ body{
 /*--HEADINGS (H1, H2, H3)--*/
 
 h1{
+    font-size: 40px;
     font-family: "Comic Sans MS", cursive, sans-serif;
-    margin: 10px;
-    margin-bottom: -3px
+    margin: -10px 10px -3px 10px;
 }
 
 h2{
@@ -139,9 +139,11 @@ h2{
     margin: 0;
 }
 
-/*--FOOTER--*/
+h3{
+    font-weight: black;
+}
 
-/*--COYOTE ROCKET CONTENT*/
+/*--MAIN AND COYOTE ROCKET CONTENT--------------*/
 
 .coyoterocket{
    padding: 10px 10px;
@@ -166,8 +168,6 @@ h2{
     position: absolute;
     top: 25px;
     right: 25px;
-/*    z-index: 0.5;*/
-
 }
 
 @media only screen and (max-width: 600px){
@@ -200,7 +200,7 @@ main{
     width: 100%;
 }
 
-/*---SECTIONS--*/
+/*--SECTIONS----------------------------*/
     /*CREATES TWO COLUMNS*/
 .column{
     float: left;
@@ -216,8 +216,13 @@ main{
   display: table;
 }
 
+table figcaption a{
+    font-size: 14px;
+    text-decoration: none;
+}
 
-/*FOOTER*/
+
+/*--FOOTER------------------------------*/
 footer{
     background: #ffffff;
     border-top: solid 4px #000000;
