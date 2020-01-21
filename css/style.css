@@ -145,9 +145,11 @@ h2{
 
 .coyoterocket{
    padding: 10px 10px;
+    position: relative;
     
 }
 .coyoterocket ul{
+    font-size: 150%;
     color: #de2226;
     text-align: left;
     padding: 0;
@@ -160,6 +162,30 @@ h2{
     list-style: none;
 }
 
+.coyotetext-block{
+    position: absolute;
+    top: 25px;
+    right: 25px;
+/*    z-index: 0.5;*/
+
+}
+
+@media only screen and (max-width: 600px){
+    .coyotetext-block{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .coyoterocket ul{
+        font-size: 110%;
+    }
+    
+    .iwantit{
+        width: 100%;
+        height: auto;
+    }
+
+}
 
 main{
     overflow: hidden;
@@ -170,8 +196,8 @@ main{
 }
     
 .coyoteimage{
-    max-height: 100%;
-    max-width: 100%;
+    height: auto;
+    width: 100%;
 }
 
 /*---SECTIONS--*/
