@@ -154,7 +154,7 @@ h3{
     
 }
 .coyoterocket ul{
-    color: #de2226;
+    color: #990033;
     font-size: 150%;
     text-align: left;
     padding: 0;
@@ -248,12 +248,17 @@ table tr {
 }
 
 table th{
-    background: #808080;
+    background: #949494;
     padding: 10px;
 }
 table a{
-    color: darkblue;
+    color: white;
+    font-weight: 100;
     font-size: 14px;
+}
+
+table a:hover{
+    color: blue;
 }
 
 
