@@ -87,40 +87,41 @@ body{
 
 
 /*--NAVIGATION------------------------------------*/
-.navigation {
-    background: #de2226;
-    display:flex;
-    font-family: 'Meera Inimai', sans-serif;
-    justify-content:flex-start;
-    list-style: none;
+
+nav {
+    width: 100%;
+    background-color: #DE2226;
+}
+nav ul {
+    overflow: hidden;
     margin: 0;
-    padding: inherit;
+    padding: 0;
 }
-
-.navigation li{
-    font-size: 20px;
+nav li {
+    list-style-type: none;
+    float: left;
+    font-family: 'Baloo', sans-serif;
+    font-size: 1em;
 }
-
-.navigation a{
-    color: #ffffff;
+nav ul li a {
     display: block;
-    padding: 0.8em;
     text-decoration: none;
+    padding: 15px;
 }
 
 
 @media only screen and (max-width: 600px){
-    .navigation {
+    nav {
         flex-flow: column wrap;
         padding: 0;
     }
 }
 
-.navigation li:hover{
+nav li:hover{
     background: #ffffff;
 }
 
-.navigation a:hover{
+nav a:hover{
     color:#de2226;
 }
 
