@@ -33,7 +33,7 @@
                 </form>
                 <br />
                 <h2>Do you want an account?</h2>
-                <a href="/acme/accounts/index.php?action=registration" alt="click to get an account">Get an account here :)</a>
+                <a href="/acme/accounts/index.php?action=registration">Get an account here :)</a>
                 </div>
             </main>
 
