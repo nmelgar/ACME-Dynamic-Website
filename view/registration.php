@@ -19,7 +19,11 @@
                 <div  class="login-container">
                 <h1>Registration!</h1>
                 <p>*All fields are required*</p>
-
+                <?php
+                    if (isset($message)) {
+                    echo $message;
+                    }
+                    ?>
                 <form action="/acme/accounts/index.php" method="post">
                 First Name:<br>
                 <input type="text" name="clientFirstname" id="clientFirstname">
@@ -33,7 +37,9 @@
                 Password:<br>
                 <input type="password" name="clientPassword" id="clientPassword">
                 <br><br>
-                <input type="submit" name="submit" value="Register">   
+                <input type="submit" name="submit" value="Register">
+                <input type="hidden" name="action" value="register"> 
+                  
 
                 </form>
                 </div>
