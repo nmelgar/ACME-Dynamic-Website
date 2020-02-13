@@ -7,6 +7,8 @@
 require_once '../library/connections.php';
 // Get the acme model for use as needed
 require_once '../model/acme-model.php';
+// Get the accounts model
+require_once '../model/accounts-model.php';
 
 // Get the array of categories
 $categories = getCategories();

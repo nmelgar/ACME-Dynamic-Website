@@ -38,6 +38,7 @@
                 <input type="password" name="clientPassword" id="clientPassword">
                 <br><br>
                 <input type="submit" name="submit" value="Register">
+                <!-- Add the action name - value pair -->
                 <input type="hidden" name="action" value="register"> 
                   
 

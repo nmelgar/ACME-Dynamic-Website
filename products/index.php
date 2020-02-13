@@ -4,11 +4,12 @@
 */
 
 // Get the database connection file
-require_once 'library/connections.php';
+require_once '../library/connections.php';
 // Get the acme model for use as needed
-require_once 'model/acme-model.php';
-// Get the
-require_once 'model/products-model.php';
+require_once '../model/acme-model.php';
+// Get the products model for use as needed
+require_once '../model/products-model.php';
+
 
 // Get the array of categories
 $categories = getCategories();
@@ -28,6 +29,15 @@ $navList .= '</ul>';
 //  echo $navList;
 //  exit;
 
+// Build a category dropdown list 
+$catList = '<select>';
+$catList .= '<option>Select Category</option>';
+foreach ($categories as $category) {
+ $catList .= '<option value="' . $category['categoryId']. '">' . $category['categoryName'] . '</option>';
+}
+$catList .= '</select>';
+
+
 //Action
 $action = filter_input(INPUT_POST, 'action');
  if ($action == NULL){
@@ -35,10 +45,9 @@ $action = filter_input(INPUT_POST, 'action');
  }
 
  switch ($action){
- case 'something':
-  
-  break;
+  case 'hope it works':
+    break;
  
  default:
-  include 'view/home.php';
+  include '../view/product-mgmt.php';
 }
