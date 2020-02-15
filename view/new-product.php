@@ -25,11 +25,6 @@
                     }
                 ?>
                 <form action="/acme/products/index.php" method="post">
-                <label>Category</label>
-                <br>
-                <?php echo $catList; ?>
-                <br>
-                <br />
                 Inventory Name:<br>
                 <input type="text" name="invName" id="invName">
                 <br>
@@ -64,6 +59,11 @@
                 <br />
                 Inventory Location:<br>
                 <input type="text" name="invLocation" id="invLocation">
+                <br>
+                <br />
+                <label>Category</label>
+                <br>
+                <?php echo $catList; ?>
                 <br>
                 <br />
                 Inventory Vendor<br>

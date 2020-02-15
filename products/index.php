@@ -81,7 +81,7 @@ $action = filter_input(INPUT_POST, 'action');
 
     case'newProduct':
 
-      $categoryId = filter_input(INPUT_POST, 'categoryId');
+      
       $invName = filter_input(INPUT_POST, 'invName');
       $invDescription = filter_input(INPUT_POST, 'invDescription');
       $invImage = filter_input(INPUT_POST, 'invImage');
@@ -91,18 +91,19 @@ $action = filter_input(INPUT_POST, 'action');
       $invSize = filter_input(INPUT_POST, 'invSize');
       $invWeight = filter_input(INPUT_POST, 'invWeight');
       $invLocation = filter_input(INPUT_POST, 'invLocation');
+      $categoryId = filter_input(INPUT_POST, 'categoryId');
       $invVendor = filter_input(INPUT_POST, 'invVendor');
       $invStyle = filter_input(INPUT_POST, 'invName');
       
       // Check for missing data
-      if(empty($categoryId) || empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($invVendor) || empty($invStyle)){
+      if(empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';
         include '../view/new-product.php';
         exit;
       }
     
       // Send the data to the model
-      $regOutcome = newProduct($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle);
+      $regOutcome = newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle);
       
       // Check and report the result
       if($regOutcome){

@@ -26,7 +26,7 @@ return $rowsChanged;
 
 }
 
-function newProduct($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle) {
+function newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle) {
         // Create a connection object using the acme connection function
         $db = acmeConnect();
         // SQL statement for database
@@ -46,6 +46,7 @@ function newProduct($categoryId, $invName, $invDescription, $invImage, $invThumb
         $stmt->bindValue(':invSize', $invSize, PDO::PARAM_INT);
         $stmt->bindValue(':invWeight', $invWeight, PDO::PARAM_INT);
         $stmt->bindValue(':invLocation', $invLocation, PDO::PARAM_STR);
+        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_STR);
         $stmt->bindValue(':invVendor', $invVendor, PDO::PARAM_STR);
         $stmt->bindValue(':invStyle', $invStyle, PDO::PARAM_STR);
         // Insert the data
