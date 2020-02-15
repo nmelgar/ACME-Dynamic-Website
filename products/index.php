@@ -46,7 +46,7 @@ $action = filter_input(INPUT_POST, 'action');
 
  switch ($action){
   case 'newCat':
-    include '../view/new-cat.php';
+    include '../view/new-category.php';
     break;
 
     case'addCat':
@@ -54,7 +54,7 @@ $action = filter_input(INPUT_POST, 'action');
 
       if(empty($categoryName)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';
-        include '../view/new-cat.php';
+        include '../view/new-category.php';
         exit;
       }
     
@@ -67,7 +67,7 @@ $action = filter_input(INPUT_POST, 'action');
         exit;
       } else {
         $message = "<p>Sorry $categoryName, but there wasn't possible to add a new category</p>";
-        include '../view/new-cat.php';
+        include '../view/new-category.php';
         exit;
       }
     
@@ -75,7 +75,7 @@ $action = filter_input(INPUT_POST, 'action');
     break;
 
     case 'newProduct':
-      include '../view/new-prod.php';
+      include '../view/new-product.php';
 
     break;
 
@@ -97,7 +97,7 @@ $action = filter_input(INPUT_POST, 'action');
       // Check for missing data
       if(empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';
-        include '../view/new-prod.php';
+        include '../view/new-product.php';
         exit;
       }
     
@@ -107,11 +107,11 @@ $action = filter_input(INPUT_POST, 'action');
       // Check and report the result
       if($insertNew){
         $message = "<p>Great! $invName added to inventory.</p>";
-        include '../view/new-prod.php';
+        include '../view/new-product.php';
         exit;
       } else {
         $message = "<p>Sorry but there wasn't possible to add a new product </p>";
-        include '../view/new-prod.php';
+        include '../view/new-product.php';
         exit;
       }    
 
