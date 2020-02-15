@@ -110,7 +110,6 @@ $action = filter_input(INPUT_POST, 'action');
         include '../view/product-mgmt.php';
       } else {
         $message = "<p>Sorry but there wasn't possible to add a new product </p>";
-      }
         include '../view/new-product.php';
         exit;
       

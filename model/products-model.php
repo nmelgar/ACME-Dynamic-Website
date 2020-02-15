@@ -45,7 +45,6 @@ function newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPri
         $stmt->bindValue(':invSize', $invSize, PDO::PARAM_INT);
         $stmt->bindValue(':invWeight', $invWeight, PDO::PARAM_INT);
         $stmt->bindValue(':invLocation', $invLocation, PDO::PARAM_STR);
-        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
         $stmt->bindValue(':invVendor', $invVendor, PDO::PARAM_STR);
         $stmt->bindValue(':invStyle', $invStyle, PDO::PARAM_STR);
         // Insert the data
