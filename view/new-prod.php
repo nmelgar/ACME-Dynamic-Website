@@ -76,7 +76,7 @@
                 <br />
                 <br />
                 <input type="submit" name="submit" value="Add Product">
-                <input type="hidden" name="action" value="newProduct">   
+                <input type="hidden" name="action" value="addProd">   
 
                 </form>
                 </div>

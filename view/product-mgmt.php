@@ -20,7 +20,7 @@
                 <p>Welcome to the product management page. Please choose an option:</p>
                 <ul>
                     <li><a href="../products/index.php?action=newCat" title="Add new categoy">Add a new category</a></li>
-                    <li><a href="../products/index.php?action=newProduct" title="Add new product">Add a new product</a></li>
+                    <li><a href="../products/index.php?action=newProd" title="Add new product">Add a new product</a></li>
 
                 </ul>
                 <?php

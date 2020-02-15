@@ -26,7 +26,7 @@ return $rowsChanged;
 
 }
 
-function newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle) {
+function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle) {
         // Create a connection object using the acme connection function
         $db = acmeConnect();
         // SQL statement for database

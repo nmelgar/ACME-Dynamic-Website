@@ -74,13 +74,12 @@ $action = filter_input(INPUT_POST, 'action');
 
     break;
 
-    case 'newProduct':
-      include '../view/new-product.php';
+    case 'newProd':
+      include '../view/new-prod.php';
 
     break;
 
-    case'newProduct':
-
+    case'addProd':
       
       $invName = filter_input(INPUT_POST, 'invName');
       $invDescription = filter_input(INPUT_POST, 'invDescription');
@@ -93,26 +92,26 @@ $action = filter_input(INPUT_POST, 'action');
       $invLocation = filter_input(INPUT_POST, 'invLocation');
       $categoryId = filter_input(INPUT_POST, 'categoryId');
       $invVendor = filter_input(INPUT_POST, 'invVendor');
-      $invStyle = filter_input(INPUT_POST, 'invName');
+      $invStyle = filter_input(INPUT_POST, 'invStyle');
       
       // Check for missing data
       if(empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';
-        include '../view/new-product.php';
+        include '../view/new-prod.php';
         exit;
       }
     
       // Send the data to the model
-      $regOutcome = newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle);
+      $insertNew = addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle);
       
       // Check and report the result
-      if($regOutcome){
+      if($insertNew){
         $message = "<p>Great! $invName added to inventory.</p>";
-        include '../view/new-product.php';
+        include '../view/new-prod.php';
         exit;
       } else {
         $message = "<p>Sorry but there wasn't possible to add a new product </p>";
-        include '../view/new-product.php';
+        include '../view/new-prod.php';
         exit;
       }    
 
