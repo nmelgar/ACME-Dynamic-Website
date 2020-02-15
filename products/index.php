@@ -30,7 +30,7 @@ $navList .= '</ul>';
 //  exit;
 
 // Build a category dropdown list 
-$catList = '<select>';
+$catList = '<select name="categoryId">';
 $catList .= '<option>Select Category</option>';
 foreach ($categories as $category) {
  $catList .= '<option value="' . $category['categoryId']. '">' . $category['categoryName'] . '</option>';
@@ -80,44 +80,46 @@ $action = filter_input(INPUT_POST, 'action');
     break;
 
     case'newProduct':
+      $categoryId = filter_input(INPUT_POST, 'categoryId');
       $invName = filter_input(INPUT_POST, 'invName');
       $invDescription = filter_input(INPUT_POST, 'invDescription');
       $invImage = filter_input(INPUT_POST, 'invImage');
       $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
       $invPrice = filter_input(INPUT_POST, 'invPrice');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-      $invName = filter_input(INPUT_POST, 'invName');
-
-      if(empty($categoryName)){
+      $invStock = filter_input(INPUT_POST, 'invStock');
+      $invSize = filter_input(INPUT_POST, 'invSize');
+      $invWeight = filter_input(INPUT_POST, 'invWeight');
+      $invLocation = filter_input(INPUT_POST, 'invLocation');
+      $categoryId = filter_input(INPUT_POST, 'categoryId');
+      $invVendor = filter_input(INPUT_POST, 'invVendor');
+      $invStyle = filter_input(INPUT_POST, 'invName');
+      
+      // Check for missing data
+      if(empty($invName) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invSize) || empty($invWeight) || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';
-        include '../view/new-cat.php';
+        include '../view/new-product.php';
         exit;
       }
     
       // Send the data to the model
-      $regOutcome = newCategory($categoryName);
+      $regOutcome = newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle);
       
       // Check and report the result
       if($regOutcome === 1){
-        header("location:/acme/products/index.php");
-        exit;
+        $message = "<p>Great! $invName added to inventory.</p>";
+        include '../view/product-mgmt.php';
       } else {
-        $message = "<p>Sorry $categoryName, but there wasn't possible to add a new category</p>";
-        include '../view/new-cat.php';
-        exit;
+        $message = "<p>Sorry but there wasn't possible to add a new product </p>";
       }
+        include '../view/new-product.php';
+        exit;
+      
     
 
     break;
 
  
- default:
+      default:
+
   include '../view/product-mgmt.php';
 }

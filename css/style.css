@@ -221,7 +221,7 @@ input[type=submit]{
   width: 50%;
 }
 
-input[type=email], input[type=password], input[type=text]{
+input[type=email], input[type=password], input[type=text], input[type=number], input[type=string]{
   width: 80%;
   padding: 12px 20px;
   margin: 8px 0;
