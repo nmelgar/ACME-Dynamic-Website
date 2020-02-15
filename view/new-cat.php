@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>ACME</title>
+        <title>ACME Login</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
     </head>
@@ -16,20 +16,24 @@
                 <?php echo $navList; ?>
             </nav>
             <main>
-                <h1>Product Management</h1>
-                <p>Welcome to the product management page. Please choose an option:</p>
-                <ul>
-                    <li><a href="../products/index.php?action=newCat" title="Add new categoy">Add a new category</a></li>
-                    <li><a href="../products/index.php?action=newProduct" title="Add new product">Add a new product</a></li>
-
-                </ul>
+                <div  class="login-container">
+                <h1>Add Category</h1>
+                <p>Add a new category for products</p>
                 <?php
                     if (isset($message)) {
                     echo $message;
                     }
                 ?>
-                
+                <form action="/acme/products/index.php" method="post">
+                New category<br>
+                <input type="text" name="categoryName" id="categoryName">
+                <br>
+                <br />
+                <input type="submit" name="submit" value="Add Category">
+                <input type="hidden" name="action" value="addCat">   
 
+                </form>
+                </div>
             </main>
 
  

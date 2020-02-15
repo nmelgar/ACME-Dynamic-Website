@@ -45,8 +45,78 @@ $action = filter_input(INPUT_POST, 'action');
  }
 
  switch ($action){
-  case 'hope it works':
+  case 'newCat':
+    include '../view/new-cat.php';
     break;
+
+    case'addCat':
+      $categoryName = filter_input(INPUT_POST, 'categoryName');
+
+      if(empty($categoryName)){
+        $message = '<p>*Please provide information for all empty form fields.*</p>';
+        include '../view/new-cat.php';
+        exit;
+      }
+    
+      // Send the data to the model
+      $regOutcome = newCategory($categoryName);
+      
+      // Check and report the result
+      if($regOutcome === 1){
+        header("location:/acme/products/index.php");
+        exit;
+      } else {
+        $message = "<p>Sorry $categoryName, but there wasn't possible to add a new category</p>";
+        include '../view/new-cat.php';
+        exit;
+      }
+    
+
+    break;
+
+    case 'newProduct':
+      include '../view/new-product.php';
+
+    break;
+
+    case'newProduct':
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invDescription = filter_input(INPUT_POST, 'invDescription');
+      $invImage = filter_input(INPUT_POST, 'invImage');
+      $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
+      $invPrice = filter_input(INPUT_POST, 'invPrice');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+      $invName = filter_input(INPUT_POST, 'invName');
+
+      if(empty($categoryName)){
+        $message = '<p>*Please provide information for all empty form fields.*</p>';
+        include '../view/new-cat.php';
+        exit;
+      }
+    
+      // Send the data to the model
+      $regOutcome = newCategory($categoryName);
+      
+      // Check and report the result
+      if($regOutcome === 1){
+        header("location:/acme/products/index.php");
+        exit;
+      } else {
+        $message = "<p>Sorry $categoryName, but there wasn't possible to add a new category</p>";
+        include '../view/new-cat.php';
+        exit;
+      }
+    
+
+    break;
+
  
  default:
   include '../view/product-mgmt.php';
