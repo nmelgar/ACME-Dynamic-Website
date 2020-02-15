@@ -26,9 +26,10 @@ return $rowsChanged;
 
 }
 
-function newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle) {
+function newProduct($categoryId, $invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $invVendor, $invStyle) {
         // Create a connection object using the acme connection function
         $db = acmeConnect();
+        // SQL statement for database
         $sql = 'INSERT INTO inventory (invName, invDescription, invImage, invThumbnail, invPrice, invStock, invSize, invWeight, invLocation, categoryId, invVendor, invStyle)
                VALUES (:invName, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invSize, :invWeight, :invLocation, :categoryId, :invVendor, :invStyle)';
         // Create the prepared statement using the acme connection
@@ -36,6 +37,7 @@ function newProduct($invName, $invDescription, $invImage, $invThumbnail, $invPri
         // The next 12 lines replace the placeholders in the SQL
         // statement with the actual values in the variables
         // and tells the database the type of data it is
+        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_STR);
         $stmt->bindValue(':invName', $invName, PDO::PARAM_STR);
         $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
         $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);

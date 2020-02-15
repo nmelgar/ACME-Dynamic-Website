@@ -39,11 +39,11 @@
                 <br>
                 <br />
                 Inventory Image<br>
-                <input type="string" name="invImage" id="invImage">
+                <input type="text" name="invImage" id="invImage" value="/acme/images/products/no-image.png">
                 <br>
                 <br />
                 Inventory Thumbnail<br>
-                <input type="string" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png">
+                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png">
                 <br>
                 <br />
                 Inventory Price:<br>
@@ -59,15 +59,11 @@
                 <br>
                 <br />
                 Inventory Weight<br>
-                <input type="string" name="invWeight" id="invWeight">
+                <input type="number" name="invWeight" id="invWeight">
                 <br>
                 <br />
                 Inventory Location:<br>
                 <input type="text" name="invLocation" id="invLocation">
-                <br>
-                <br />
-                Category Id:<br>
-                <input type="number" name="categoryId" id="categoryId">
                 <br>
                 <br />
                 Inventory Vendor<br>
