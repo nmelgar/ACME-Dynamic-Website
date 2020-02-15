@@ -31,7 +31,7 @@ $navList .= '</ul>';
 
 // Build a category dropdown list 
 $catList = '<select name="categoryId">';
-$catList .= '<option>Select Category</option>';
+$catList .= '<option>Select a Category</option>';
 foreach ($categories as $category) {
  $catList .= '<option value="' . $category['categoryId']. '">' . $category['categoryName'] . '</option>';
 }
@@ -74,12 +74,12 @@ $action = filter_input(INPUT_POST, 'action');
 
     break;
 
-    case 'newProd':
+    case 'newProduct':
       include '../view/new-prod.php';
 
     break;
 
-    case'addProd':
+    case'newProd':
       
       $invName = filter_input(INPUT_POST, 'invName');
       $invDescription = filter_input(INPUT_POST, 'invDescription');
