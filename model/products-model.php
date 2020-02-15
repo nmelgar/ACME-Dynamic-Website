@@ -37,7 +37,6 @@ function newProduct($categoryId, $invName, $invDescription, $invImage, $invThumb
         // The next 12 lines replace the placeholders in the SQL
         // statement with the actual values in the variables
         // and tells the database the type of data it is
-        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_STR);
         $stmt->bindValue(':invName', $invName, PDO::PARAM_STR);
         $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
         $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
