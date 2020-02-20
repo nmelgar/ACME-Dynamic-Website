@@ -304,6 +304,14 @@ table a:hover{
     color: blue;
 }
 
+/*--Registration and VALIDATION*/
+
+input:required:valid {
+    background-image: green;
+    background-position: right top;
+    background-repeat: no-repeat;
+   }
+
 
 /*--FOOTER------------------------------*/
 footer{

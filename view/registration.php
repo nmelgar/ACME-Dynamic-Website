@@ -25,17 +25,19 @@
                     }
                     ?>
                 <form action="/acme/accounts/index.php" method="post">
-                First Name:<br>
-                <input type="text" name="clientFirstname" id="clientFirstname">
+                First Name *:<br>
+                <input type="text" name="clientFirstname" id="clientFirstname" required placeholder="Your name">
                 <br>
-                Last Name:<br>
-                <input type="text" name="clientLastname" id="clientLastname">
+                Last Name * :<br>
+                <input type="text" name="clientLastname" id="clientLastname" required placeholder="Your last name">
                 <br>
-                Email:<br>
-                <input type="email" name="clientEmail" id="clientEmail">
+                Email *:<br>
+                <input type="email" name="clientEmail" id="clientEmail" required placeholder="example@domain.com">
                 <br>
-                Password:<br>
-                <input type="password" name="clientPassword" id="clientPassword">
+                Password *:<br>
+                <span>Password must be at least 8 characters, at least 1 uppercase letter, 1 number and 1 special character</span>
+                <br>
+                <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required placeholder="Write you password here">
                 <br><br>
                 <input type="submit" name="submit" value="Register">
                 <!-- Add the action name - value pair -->

@@ -26,39 +26,39 @@
                 ?>
                 <form action="/acme/products/index.php" method="post">
                 Inventory Name:<br>
-                <input type="text" name="invName" id="invName">
+                <input type="text" name="invName" id="invName" required>
                 <br>
                 <br />
                 Inventory Description:<br>
-                <input type="text" name="invDescription" id="invDescription">
+                <input type="text" name="invDescription" id="invDescription" required>
                 <br>
                 <br />
                 Inventory Image<br>
-                <input type="text" name="invImage" id="invImage" value="/acme/images/products/no-image.png">
+                <input type="text" name="invImage" id="invImage" value="/acme/images/products/no-image.png" required>
                 <br>
                 <br />
                 Inventory Thumbnail<br>
-                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png">
+                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" required>
                 <br>
                 <br />
                 Inventory Price:<br>
-                <input type="number" name="invPrice" id="invPrice">
+                <input type="number" name="invPrice" id="invPrice" required>
                 <br>
                 <br />
                 Inventory Stock:<br>
-                <input type="number" name="invStock" id="invStock">
+                <input type="number" name="invStock" id="invStock" required>
                 <br>
                 <br />
                 Inventory Size<br>
-                <input type="number" name="invSize" id="invSize">
+                <input type="number" name="invSize" id="invSize" required>
                 <br>
                 <br />
                 Inventory Weight<br>
-                <input type="number" name="invWeight" id="invWeight">
+                <input type="number" name="invWeight" id="invWeight" required>
                 <br>
                 <br />
                 Inventory Location:<br>
-                <input type="text" name="invLocation" id="invLocation">
+                <input type="text" name="invLocation" id="invLocation" required>
                 <br>
                 <br />
                 <label>Category</label>
@@ -67,11 +67,11 @@
                 <br>
                 <br />
                 Inventory Vendor<br>
-                <input type="text" name="invVendor" id="invVendor">
+                <input type="text" name="invVendor" id="invVendor" required>
                 <br>
                 <br />
                 Inventory Style<br>
-                <input type="text" name="invStyle" id="invStyle">
+                <input type="text" name="invStyle" id="invStyle" required>
                 <br>
                 <br />
                 <br />

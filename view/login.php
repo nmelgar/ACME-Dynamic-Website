@@ -26,12 +26,14 @@
                 <p>*All fields are required*</p>
 
                 <form action="/acme/accounts/index.php" method="post">
-                Email:<br>
-                <input type="email" name="clientEmail" id="clientEmail">
+                Email *:<br>
+                <input type="email" name="clientEmail" id="clientEmail" required>
                 <br>
                 <br />
-                Password:<br>
-                <input type="password" name="clientPassword" id="clientPassword">
+                Password *:<br>
+                <span>Password must be at least 8 characters, at least 1 uppercase letter, 1 number and 1 special character</span>
+                <br>
+                <input type="password" name="clientPassword" id="clientPassword" required>
                 <br><br>
                 <input type="submit" name="submit" value="Login">   
 
