@@ -26,7 +26,7 @@
                     ?>
                 <form action="/acme/accounts/index.php" method="post">
                 First Name *:<br>
-                <input type="text" name="clientFirstname" id="clientFirstname" required placeholder="Your name">
+                <input type="text" name="clientFirstname" id="clientFirstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required placeholder="Your name">
                 <br>
                 Last Name * :<br>
                 <input type="text" name="clientLastname" id="clientLastname" required placeholder="Your last name">
