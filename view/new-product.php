@@ -26,39 +26,39 @@
                 ?>
                 <form action="/acme/products/index.php" method="post">
                 Inventory Name:<br>
-                <input type="text" name="invName" id="invName" required>
+                <input type="text" name="invName" id="invName" <?php if(isset($invName)){echo "value='$invName'";}  ?> required>
                 <br>
                 <br />
                 Inventory Description:<br>
-                <input type="text" name="invDescription" id="invDescription" required>
+                <input type="text" name="invDescription" id="invDescription" <?php if(isset($invDescription)){echo "value='$invDescription'";}  ?> required>
                 <br>
                 <br />
                 Inventory Image<br>
-                <input type="text" name="invImage" id="invImage" value="/acme/images/products/no-image.png" required>
+                <input type="text" name="invImage" id="invImage" value="/acme/images/products/no-image.png" <?php if(isset($invImage)){echo "value='$invImage'";}  ?>required>
                 <br>
                 <br />
                 Inventory Thumbnail<br>
-                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" required>
+                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" <?php if(isset($invThumbnail)){echo "value='$invinvThumbnail'";}  ?> required>
                 <br>
                 <br />
                 Inventory Price:<br>
-                <input type="number" name="invPrice" id="invPrice" required>
+                <input type="number" name="invPrice" id="invPrice" <?php if(isset($invPrice)){echo "value='$invPrice'";}  ?> required>
                 <br>
                 <br />
                 Inventory Stock:<br>
-                <input type="number" name="invStock" id="invStock" required>
+                <input type="number" name="invStock" id="invStock" <?php if(isset($invStock)){echo "value='$invStock'";}  ?> required>
                 <br>
                 <br />
                 Inventory Size<br>
-                <input type="number" name="invSize" id="invSize" required>
+                <input type="number" name="invSize" id="invSize" <?php if(isset($invSize)){echo "value='$invSize'";}  ?> required>
                 <br>
                 <br />
                 Inventory Weight<br>
-                <input type="number" name="invWeight" id="invWeight" required>
+                <input type="number" name="invWeight" id="invWeight" <?php if(isset($invWeight)){echo "value='$invWeight'";}  ?> required>
                 <br>
                 <br />
                 Inventory Location:<br>
-                <input type="text" name="invLocation" id="invLocation" required>
+                <input type="text" name="invLocation" id="invLocation" <?php if(isset($invLocation)){echo "value='$invLocation'";}  ?> required>
                 <br>
                 <br />
                 <label>Category</label>
