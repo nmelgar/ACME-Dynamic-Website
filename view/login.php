@@ -27,14 +27,16 @@
 
                 <form action="/acme/accounts/index.php" method="post">
                 Email *:<br>
-                <input type="email" name="clientEmail" id="clientEmail" required>
+                <input type="email" name="clientEmail" id="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                 <br>
                 <br />
                 Password *:<br>
                 <span>Password must be at least 8 characters, at least 1 uppercase letter, 1 number and 1 special character</span>
                 <br>
-                <input type="password" name="clientPassword" id="clientPassword" required>
+                <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                 <br><br>
+
+                <input type="hidden" name="action" value="login_user">
                 <input type="submit" name="submit" value="Login">   
 
                 </form>

@@ -39,6 +39,22 @@ $action = filter_input(INPUT_POST, 'action');
  switch ($action){
  case 'login':
     include '../view/login.php';
+
+  case 'login_user':
+    $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+    $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);
+
+    //validate email
+    $clientEmail = checkEmail($clientEmail);
+    //check password
+    $checkPassword = checkPassword($clientPassword);
+
+    if(empty($clientEmail) || empty($checkPassword)){
+      $message = '<p>Please provide information for all empty form fields.</p>';
+      include '../view/login.php';
+      exit;
+    }
+  break;
   
   break;
   case'registration':
@@ -65,8 +81,11 @@ $action = filter_input(INPUT_POST, 'action');
         exit;
       }
       
+      // Hash the checked password
+      $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+      
       // Send the data to the model
-      $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
+      $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $hashedPassword);
       
       // Check and report the result
       if($regOutcome === 1){

@@ -29,10 +29,10 @@
                 <input type="text" name="clientFirstname" id="clientFirstname" <?php if(isset($clientFirstname)){echo "value='$clientFirstname'";}  ?> required placeholder="Your name">
                 <br>
                 Last Name * :<br>
-                <input type="text" name="clientLastname" id="clientLastname" required placeholder="Your last name">
+                <input type="text" name="clientLastname" id="clientLastname" <?php if(isset($clientLastname)){echo "value='$clientLastname'";}  ?> required placeholder="Your last name">
                 <br>
                 Email *:<br>
-                <input type="email" name="clientEmail" id="clientEmail" required placeholder="example@domain.com">
+                <input type="email" name="clientEmail" id="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required placeholder="example@domain.com">
                 <br>
                 Password *:<br>
                 <span>Password must be at least 8 characters, at least 1 uppercase letter, 1 number and 1 special character</span>
