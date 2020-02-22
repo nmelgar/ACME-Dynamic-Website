@@ -16,29 +16,15 @@ require_once '../library/functions.php';
 // Get the array of categories
 $categories = getCategories();
 
+// Nav List
+$navList = navList($categories);
+
 // var_dump($categories);
 // echo '<pre>' . print_r($categories, true) . '</pre>';
 // exit;
 
-// Build a navigation bar using the $categories array
-$navList = '<ul>';
-$navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
-foreach ($categories as $category) {
- $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-}
-$navList .= '</ul>';
-
 //  echo $navList;
 //  exit;
-
-// Build a category dropdown list 
-$catList = '<select name="categoryId" required>';
-$catList .= '<option>Select a Category</option>';
-foreach ($categories as $category) {
- $catList .= '<option value="' . $category['categoryId']. '">' . $category['categoryName'] . '</option>';
-}
-$catList .= '</select>';
-
 
 //Action
 $action = filter_input(INPUT_POST, 'action');
@@ -52,7 +38,7 @@ $action = filter_input(INPUT_POST, 'action');
     break;
 
     case'addCat':
-      $categoryName = filter_input(INPUT_POST, 'categoryName');
+      $categoryName = filter_input(INPUT_POST, 'categoryName', FILTER_SANITIZE_STRING);
 
       if(empty($categoryName)){
         $message = '<p>*Please provide information for all empty form fields.*</p>';

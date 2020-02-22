@@ -15,20 +15,8 @@ require_once '../library/functions.php';
 // Get the array of categories
 $categories = getCategories();
 
-// var_dump($categories);
-// echo '<pre>' . print_r($categories, true) . '</pre>';
-// exit;
-
-// Build a navigation bar using the $categories array
-$navList = '<ul>';
-$navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
-foreach ($categories as $category) {
- $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
-}
-$navList .= '</ul>';
-
-//  echo $navList;
-//  exit;
+// Nav List
+$navList = navList($categories);
 
 //Action
 $action = filter_input(INPUT_POST, 'action');
@@ -39,7 +27,7 @@ $action = filter_input(INPUT_POST, 'action');
  switch ($action){
  case 'login':
     include '../view/login.php';
-
+    break;
   case 'login_user':
     $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
     $clientPassword = filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING);

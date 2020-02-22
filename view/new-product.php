@@ -6,7 +6,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
     </head>
-
+    <?php 
+    // Build a category dropdown list 
+       $catList = '<select name="categoryId" required>';
+       $catList .= '<option>Select a Category</option>';
+       foreach ($categories as $category) {
+        $catList .= '<option value="' . $category['categoryId']. '"';
+            if (isset($categoryId)){
+                if ($categoryId == $category['categoryId']){
+                    $catList.= ' selected ';
+                }
+            }
+        $catList .= '>' . $category['categoryName'] . '</option>';
+        }
+       $catList .= '</select>';
+    ?>
     <body>
         <div id="container">
             <header>
@@ -38,7 +52,7 @@
                 <br>
                 <br />
                 Inventory Thumbnail<br>
-                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" <?php if(isset($invThumbnail)){echo "value='$invinvThumbnail'";}  ?> required>
+                <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" <?php if(isset($invThumbnail)){echo "value='$invThumbnail'";}  ?> required>
                 <br>
                 <br />
                 Inventory Price:<br>

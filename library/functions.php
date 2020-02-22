@@ -18,3 +18,17 @@ function checkPassword($clientPassword){
     $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
     return preg_match($pattern, $clientPassword);
    }
+
+   // Build a navigation bar using the $categories array
+   // This will build the navigation list for all controllers
+function navList(){
+    $categories = getCategories();
+    $navList = '<ul>';
+    $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
+    foreach ($categories as $category) {
+    $navList .= "<li><a href='/acme/index.php?action=".urlencode($category['categoryName'])."' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+    }
+    $navList .= '</ul>';
+
+    return $navList;
+}

@@ -26,7 +26,7 @@
                 ?>
                 <form action="/acme/products/index.php" method="post">
                 New category<br>
-                <input type="text" name="categoryName" id="categoryName">
+                <input type="text" name="categoryName" id="categoryName" <?php if(isset($categoryName)){echo "value='$categoryName'";}  ?> required>
                 <br>
                 <br />
                 <input type="submit" name="submit" value="Add Category">
