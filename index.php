@@ -13,9 +13,7 @@ require_once 'library/functions.php';
 // Get the array of categories
 $categories = getCategories();
 
-// var_dump($categories);
-// echo '<pre>' . print_r($categories, true) . '</pre>';
-// exit;
+
 
 // Nav List
 $navList = navList($categories);

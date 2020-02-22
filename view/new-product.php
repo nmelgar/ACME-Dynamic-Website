@@ -8,7 +8,7 @@
     </head>
     <?php 
     // Build a category dropdown list 
-       $catList = '<select name="categoryId" required>';
+       $catList = '<select name="categoryId">';
        $catList .= '<option>Select a Category</option>';
        foreach ($categories as $category) {
         $catList .= '<option value="' . $category['categoryId']. '"';
