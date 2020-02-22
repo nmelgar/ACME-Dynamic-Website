@@ -81,11 +81,11 @@
                 <br>
                 <br />
                 Inventory Vendor<br>
-                <input type="text" name="invVendor" id="invVendor" required>
+                <input type="text" name="invVendor" id="invVendor" <?php if(isset($invVendor)){echo "value='$invVendor'";}  ?> required>
                 <br>
                 <br />
                 Inventory Style<br>
-                <input type="text" name="invStyle" id="invStyle" required>
+                <input type="text" name="invStyle" id="invStyle" <?php if(isset($invStyle)){echo "value='$invStyle'";}  ?> required>
                 <br>
                 <br />
                 <br />
