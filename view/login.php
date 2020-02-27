@@ -23,9 +23,10 @@
                     echo $message;
                     }
                 ?>
+                
                 <p>*All fields are required*</p>
 
-                <form action="/acme/accounts/index.php" method="post">
+                <form method="post" action="/acme/accounts/">
                 Email *:<br>
                 <input type="email" name="clientEmail" id="clientEmail" <?php if(isset($clientEmail)){echo "value='$clientEmail'";}  ?> required>
                 <br>
