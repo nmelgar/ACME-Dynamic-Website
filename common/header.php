@@ -1,6 +1,6 @@
 <div class="header">
     <div class="header-left">
-        <a href="#" class="logo"><img id="logo" src="/acme/images/site/logo.gif" alt="Acme logo"></a>
+        <a href="/acme/" class="logo"><img id="logo" src="/acme/images/site/logo.gif" alt="Acme logo"></a>
     </div>    
     <div class="header-right">
         <?php if(isset($cookieFirstname)){

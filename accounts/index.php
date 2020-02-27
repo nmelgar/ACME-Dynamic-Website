@@ -68,6 +68,7 @@ $action = filter_input(INPUT_POST, 'action');
       array_pop($clientData);
       // Store the array into the session
       $_SESSION['clientData'] = $clientData;
+     
       // Send them to the admin view
       include '../view/admin.php';
       exit;
@@ -116,8 +117,8 @@ $action = filter_input(INPUT_POST, 'action');
       // Check and report the result
       if($regOutcome === 1){
         setcookie('firstname', $clientFirstname, strtotime('+1 year'), '/');
-        $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-        include '../view/login.php';
+        $_SESSION ['message'] = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        header('Location: /acme/accounts/?action=login');
         exit;
       } else {
         $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
