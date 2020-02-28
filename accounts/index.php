@@ -68,7 +68,7 @@ $action = filter_input(INPUT_POST, 'action');
       array_pop($clientData);
       // Store the array into the session
       $_SESSION['clientData'] = $clientData;
-     
+       
       // Send them to the admin view
       include '../view/admin.php';
       exit;
@@ -127,4 +127,6 @@ $action = filter_input(INPUT_POST, 'action');
       }
       break;
       default:
+        include '../view/admin.php';
+    break;
   }

@@ -312,6 +312,13 @@ input:required:valid {
     background-repeat: no-repeat;
    }
 
+/*--DISPLAYS USER'S DATA--*/
+
+.user-data{
+    list-style: none;
+    text-align: left;
+
+}
 
 /*--FOOTER------------------------------*/
 footer{
