@@ -126,6 +126,12 @@ $action = filter_input(INPUT_POST, 'action');
         exit;
       }
       break;
+
+      case 'logout':
+        session_destroy();
+        header('location: /acme/');
+        break;
+
       default:
         include '../view/admin.php';
     break;

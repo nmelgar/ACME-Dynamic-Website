@@ -6,6 +6,13 @@
         <?php if(isset($cookieFirstname)){
             echo "<span>Welcome $cookieFirstname</span>";
         } ?>
-        <a href="/acme/accounts/index.php?action=login" class="account"><img id="account" src="/acme/images/site/account.gif" alt="Image of a folder">  My Account</a>
+
+        <?php
+            if (isset($_SESSION['loggedin'])){ ?>
+                <a href="/acme/accounts/index.php?action=logout" class="account"><img id="account" src="/acme/images/site/account.gif" alt="Image of a folder"> Logout</a>
+            <?php } else { ?>
+                <a href="/acme/accounts/index.php?action=login" class="account"><img id="account" src="/acme/images/site/account.gif" alt="Image of a folder">  My Account</a>
+            <?php }
+        ?>
     </div>            
 </div>

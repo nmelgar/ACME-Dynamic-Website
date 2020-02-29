@@ -40,6 +40,15 @@
                         <li>Client level: <?php echo $_SESSION['clientData']['clientLevel']; ?></li>
                     </ul>
 
+                    <?php
+                        if($_SESSION['clientData']['clientLevel'] > 1) {
+                    ?>
+                        <h2>You are allowed to:</h2>
+                        <p><a href="/acme/products" title="Go to products page">Manage Products</a></p>
+                    <?php
+                        }
+                    ?>
+
                 </div>
 
 
