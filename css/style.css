@@ -306,7 +306,11 @@ table a:hover{
 
 /*--Registration and VALIDATION*/
 
-
+/* input:required:valid {
+    background-image: green;
+    background-position: right top;
+    background-repeat: no-repeat;
+   } */
 
 /*--DISPLAYS USER'S DATA--*/
 

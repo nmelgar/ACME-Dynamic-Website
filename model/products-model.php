@@ -4,29 +4,30 @@
 * Products Model
 */
 
-function newCategory($categoryName){
-// Create a connection object using the acme connection function
-$db = acmeConnect();
-$sql = 'INSERT INTO categories (categoryName)
+function newCategory($categoryName)
+{
+        // Create a connection object using the acme connection function
+        $db = acmeConnect();
+        $sql = 'INSERT INTO categories (categoryName)
         VALUES (:categoryName)';
-// Create the prepared statement using the acme connection
-$stmt = $db->prepare($sql);
-// The next line replace the placeholders in the SQL
-// statement with the actual values in the variables
-// and tells the database the type of data it is
-$stmt->bindValue(':categoryName', $categoryName, PDO::PARAM_STR);
-// Insert the data
-$stmt->execute();
-// Ask how many rows changed as a result of our insert
-$rowsChanged = $stmt->rowCount();
-// Close the database interaction
-$stmt->closeCursor();
-// Return the indication of success (rows changed)
-return $rowsChanged;
-
+        // Create the prepared statement using the acme connection
+        $stmt = $db->prepare($sql);
+        // The next line replace the placeholders in the SQL
+        // statement with the actual values in the variables
+        // and tells the database the type of data it is
+        $stmt->bindValue(':categoryName', $categoryName, PDO::PARAM_STR);
+        // Insert the data
+        $stmt->execute();
+        // Ask how many rows changed as a result of our insert
+        $rowsChanged = $stmt->rowCount();
+        // Close the database interaction
+        $stmt->closeCursor();
+        // Return the indication of success (rows changed)
+        return $rowsChanged;
 }
 
-function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle) {
+function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invSize, $invWeight, $invLocation, $categoryId, $invVendor, $invStyle)
+{
         // Create a connection object using the acme connection function
         $db = acmeConnect();
         // SQL statement for database
@@ -57,4 +58,17 @@ function addProduct($invName, $invDescription, $invImage, $invThumbnail, $invPri
         $stmt->closeCursor();
         // Return the indication of success (rows changed)
         return $rowsChanged;
-    }
+}
+
+// Get products by categoryId 
+function getProductsByCategory($categoryId)
+{
+        $db = acmeConnect();
+        $sql = 'SELECT * FROM inventory WHERE categoryId = :categoryId';
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $products;
+}

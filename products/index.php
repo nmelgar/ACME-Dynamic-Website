@@ -108,8 +108,23 @@ $action = filter_input(INPUT_POST, 'action');
 
     break;
 
+    /* * ********************************** 
+    * Get Inventory Items by categoryId 
+    * Used for starting Update & delete process 
+    * ********************************** */ 
+    case 'getInventoryItems': 
+      // Get the categoryId 
+      $categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_SANITIZE_NUMBER_INT); 
+      // Fetch the products by categoryId from the DB 
+      $productsArray = getProductsByCategory($categoryId); 
+      // Convert the array to a JSON object and send it back 
+      echo json_encode($productsArray); 
+      break;
+
  
-      default:
+    default:
+
+      $categoryList = buildCategoryList($categories);
 
   include '../view/product-mgmt.php';
 }
