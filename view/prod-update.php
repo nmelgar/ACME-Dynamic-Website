@@ -17,6 +17,10 @@ foreach ($categories as $category) {
         if ($categoryId == $category['categoryId']) {
             $catList .= ' selected ';
         }
+    } elseif (isset($prodInfo['categoryId'])) {
+        if ($category['categoryId'] === $prodInfo['categoryId']) {
+            $catList .= ' selected ';
+        }
     }
     $catList .= '>' . $category['categoryName'] . '</option>';
 }
@@ -55,11 +59,11 @@ $catList .= '</select>';
                     <br>
                     <br />
                     Inventory Description:<br>
-                    <input type="text" name="invDescription" id="invDescription" <?php if (isset($invDescription)) {
+                    <textarea name="invDescription" id="invDescription" required><?php if (isset($invDescription)) {
                                                                                         echo $invDescription;
                                                                                     } elseif (isset($prodInfo['invDescription'])) {
                                                                                         echo $prodInfo['invDescription'];
-                                                                                    }  ?> required>
+                                                                                    }  ?></textarea>
                     <br>
                     <br />
                     Inventory Image<br>
@@ -81,9 +85,9 @@ $catList .= '</select>';
                     Inventory Price:<br>
                     <input type="number" name="invPrice" id="invPrice" <?php if (isset($invPrice)) {
                                                                             echo "value='$invPrice'";
-                                                                        }  elseif (isset($prodInfo['invPrice'])) {
+                                                                        } elseif (isset($prodInfo['invPrice'])) {
                                                                             echo "value='$prodInfo[invPrice]'";
-                                                                        }?> required>
+                                                                        } ?> required>
                     <br>
                     <br />
                     Inventory Stock:<br>

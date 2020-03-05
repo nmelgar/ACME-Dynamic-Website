@@ -123,7 +123,7 @@ switch ($action) {
 
 
   case 'mod':
-    $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+    $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
     $prodInfo = getProductInfo($invId);
     if (count($prodInfo) < 1) {
       $_SESSION['message'] = 'Sorry, no product information could be found.';

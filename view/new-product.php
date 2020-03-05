@@ -44,7 +44,7 @@
                 <br>
                 <br />
                 Inventory Description:<br>
-                <input type="text" name="invDescription" id="invDescription" <?php if(isset($invDescription)){echo "value='$invDescription'";}  ?> required>
+                <textarea name="invDescription" id="invDescription" required> <?php if(isset($invDescription)){echo "value='$invDescription'";}  ?> </textarea>
                 <br>
                 <br />
                 Inventory Image<br>
