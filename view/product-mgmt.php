@@ -58,6 +58,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
         </footer>
 
     </div>
+    <script src="../js/products.js"></script>
 </body>
 
 </html>

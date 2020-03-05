@@ -320,6 +320,19 @@ table a:hover{
 
 }
 
+/*--TABLE---*/
+/* #productsDisplay{
+    padding: 10px;;
+    border: 2px solid black;
+} */
+
+#productsDisplay a{
+    color: red;
+}
+#productsDisplay a:hover{
+    color: blue;
+}
+
 /*--FOOTER------------------------------*/
 footer{
     background: #ffffff;
