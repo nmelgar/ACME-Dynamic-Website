@@ -155,11 +155,12 @@ switch ($action) {
       || empty($invStock) || empty($invSize) || empty($invWeight)
       || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)
     ) {
-      $message = '<p>Please complete all information for the new item! </p>';
+      $_SESSION['message'] = '<p>Please complete all information for the new item! </p>';
       include '../view/new-prod.php';
       exit;
     }
-    $insertResult = addProduct(
+    $updateResult = updateProduct(
+      $invId,
       $invName,
       $invDescription,
       $invImage,
@@ -173,12 +174,13 @@ switch ($action) {
       $invVendor,
       $invStyle
     );
-    if ($insertResult) {
-      $message = "<p>Congratulations, $invName was successfully updated.</p>";
-      include '../view/prod-update.php';
+    if ($updateResult) {
+      $message = "<p class='notify'>Congratulations, $invName was successfully updated.</p>";
+      $_SESSION['message'] = $message;
+      header('location: /acme/products/');
       exit;
     } else {
-      $message = "<p>Error. The new product was not updated.</p>";
+      $_SESSION['message'] = "<p>Error. The new product was not updated.</p>";
       include '../view/prod-update.php';
       exit;
     }
