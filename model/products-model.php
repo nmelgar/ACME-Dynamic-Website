@@ -100,7 +100,7 @@ function updateProduct(
         $invLocation,
         $categoryId,
         $invVendor,
-        $invStyle        
+        $invStyle
 ) {
         // Create a connection
         $db = acmeConnect();
@@ -125,6 +125,18 @@ function updateProduct(
         $stmt->bindValue(':invVendor', $invVendor, PDO::PARAM_STR);
         $stmt->bindValue(':categoryId', $categoryId, PDO::PARAM_INT);
         $stmt->bindValue(':invStyle', $invStyle, PDO::PARAM_STR);
+        $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+        $stmt->execute();
+        $rowsChanged = $stmt->rowCount();
+        $stmt->closeCursor();
+        return $rowsChanged;
+}
+
+function deleteProduct($invId)
+{
+        $db = acmeConnect();
+        $sql = 'DELETE FROM inventory WHERE invId = :invId';
+        $stmt = $db->prepare($sql);
         $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
         $stmt->execute();
         $rowsChanged = $stmt->rowCount();
