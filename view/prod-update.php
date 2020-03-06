@@ -75,11 +75,12 @@ $catList .= '</select>';
                     <br>
                     <br />
                     Inventory Thumbnail<br>
-                    <input type="text" name="invThumbnail" id="invThumbnail" value="/acme/images/products/no-image.png" <?php if (isset($invThumbnail)) {
-                                                                                                                            echo "value='$invThumbnail'";
-                                                                                                                        } elseif (isset($prodInfo['invThumbnail'])) {
-                                                                                                                            echo "value='$prodInfo[invThumbnail]'";
-                                                                                                                        } ?> required>
+                    <input type="text" name="invThumbnail" id="invThumbnail" <?php if (isset($invThumbnail)) {
+                                                                                    echo "value='$invThumbnail'";
+                                                                                } elseif (isset($prodInfo['invThumbnail'])) {
+                                                                                    echo "value='$prodInfo[invThumbnail]'";
+                                                                                } ?> required>
+
                     <br>
                     <br />
                     Inventory Price:<br>
@@ -146,6 +147,11 @@ $catList .= '</select>';
                     <br />
                     <input type="submit" name="submit" value="Update Product">
                     <input type="hidden" name="action" value="updateProd">
+                    <input type="hidden" name="invId" value="<?php if (isset($prodInfo['invId'])) {
+                                                                    echo $prodInfo['invId'];
+                                                                } elseif (isset($invId)) {
+                                                                    echo $invId;
+                                                                } ?>">
 
                 </form>
             </div>

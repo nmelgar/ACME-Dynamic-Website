@@ -134,6 +134,56 @@ switch ($action) {
     exit;
     break;
 
+  case 'updateProd':
+    $invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
+    $invName = filter_input(INPUT_POST, 'invName', FILTER_SANITIZE_STRING);
+    $invDescription = filter_input(INPUT_POST, 'invDescription', FILTER_SANITIZE_STRING);
+    $invImage = filter_input(INPUT_POST, 'invImage', FILTER_SANITIZE_STRING);
+    $invThumbnail = filter_input(INPUT_POST, 'invThumbnail', FILTER_SANITIZE_STRING);
+    $invPrice = filter_input(INPUT_POST, 'invPrice', FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+    $invStock = filter_input(INPUT_POST, 'invStock', FILTER_SANITIZE_NUMBER_INT);
+    $invSize = filter_input(INPUT_POST, 'invSize', FILTER_SANITIZE_NUMBER_INT);
+    $invWeight = filter_input(INPUT_POST, 'invWeight', FILTER_SANITIZE_NUMBER_INT);
+    $invLocation = filter_input(INPUT_POST, 'invLocation', FILTER_SANITIZE_STRING);
+    $categoryId = filter_input(INPUT_POST, 'categoryId', FILTER_SANITIZE_NUMBER_INT);
+    $invVendor = filter_input(INPUT_POST, 'invVendor', FILTER_SANITIZE_STRING);
+    $invStyle = filter_input(INPUT_POST, 'invStyle', FILTER_SANITIZE_STRING);
+
+    if (
+      empty($invName) || empty($invDescription)
+      || empty($invImage) || empty($invThumbnail) || empty($invPrice)
+      || empty($invStock) || empty($invSize) || empty($invWeight)
+      || empty($invLocation) || empty($categoryId) || empty($invVendor) || empty($invStyle)
+    ) {
+      $message = '<p>Please complete all information for the new item! </p>';
+      include '../view/new-prod.php';
+      exit;
+    }
+    $insertResult = addProduct(
+      $invName,
+      $invDescription,
+      $invImage,
+      $invThumbnail,
+      $invPrice,
+      $invStock,
+      $invSize,
+      $invWeight,
+      $invLocation,
+      $categoryId,
+      $invVendor,
+      $invStyle
+    );
+    if ($insertResult) {
+      $message = "<p>Congratulations, $invName was successfully updated.</p>";
+      include '../view/prod-update.php';
+      exit;
+    } else {
+      $message = "<p>Error. The new product was not updated.</p>";
+      include '../view/prod-update.php';
+      exit;
+    }
+    break;
+
   default:
 
     $categoryList = buildCategoryList($categories);
