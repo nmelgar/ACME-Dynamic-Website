@@ -13,7 +13,7 @@ if (isset($_SESSION['message'])) {
 
 <head>
     <meta charset="utf-8">
-    <title>ACME</title>
+    <title>ACME | Product Management</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
 </head>

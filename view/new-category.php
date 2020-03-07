@@ -17,7 +17,7 @@
             </nav>
             <main>
                 <div  class="login-container">
-                <h1>Add Category</h1>
+                <h1>ACME | Add Category</h1>
                 <p>Add a new category for products</p>
                 <?php
                     if (isset($message)) {
