@@ -60,9 +60,9 @@
                                                                             ?> required>
 
                     <br><br>
-                    <input type="submit" name="submit" value="Update client information">
+                    <input type="submit" name="submit" value="Update your info">
                     <!-- Add the action name - value pair -->
-                    <input type="hidden" name="action" value="updateClient">
+                    <input type="hidden" name="action" value="updateClientInformation">
                     <input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']; ?>">
 
                     <br>
@@ -79,9 +79,9 @@
                     <br>
                     <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <br><br>
-                    <input type="submit" name="submit" value="">
+                    <input type="submit" name="submit" value="Change password">
                     <!-- Add the action name - value pair -->
-                    <input type="hidden" name="action" value="updatePassword">
+                    <input type="hidden" name="action" value="updateClientPassword">
                     <input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']; ?>">
 
                 </form>
