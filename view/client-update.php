@@ -58,18 +58,34 @@
                                                                                 echo "value='" . $_SESSION['clientData']['clientEmail'] . "'";
                                                                             }
                                                                             ?> required>
+
+                    <br><br>
+                    <input type="submit" name="submit" value="Update client information">
+                    <!-- Add the action name - value pair -->
+                    <input type="hidden" name="action" value="updateClient">
+                    <input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']; ?>">
+
+                    <br>
+                    <br>
+
+                </form>
+
+                <h2>Change your password</h2>
+                <form action="/acme/accounts/index.php" method="post">
+                    <p>Change your password here :)</p>
                     <br>
                     Password *:<br>
                     <span>Password must be at least 8 characters, at least 1 uppercase letter, 1 number and 1 special character</span>
                     <br>
-                    <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required placeholder="Write you password here">
+                    <input type="password" name="clientPassword" id="clientPassword" pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required>
                     <br><br>
-                    <input type="submit" name="submit" value="Register">
+                    <input type="submit" name="submit" value="">
                     <!-- Add the action name - value pair -->
-                    <input type="hidden" name="action" value="register">
-
+                    <input type="hidden" name="action" value="updatePassword">
+                    <input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']; ?>">
 
                 </form>
+
             </div>
         </main>
 
