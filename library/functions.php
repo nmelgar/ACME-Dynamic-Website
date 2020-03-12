@@ -29,7 +29,7 @@ function navList()
     $navList = '<ul>';
     $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
     foreach ($categories as $category) {
-        $navList .= "<li><a href='/acme/index.php?action=" . urlencode($category['categoryName']) . "' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+        $navList .= "<li><a href='/acme/products/index.php?action=category&categoryName=" . urlencode($category['categoryName']) . "' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
     }
     $navList .= '</ul>';
 
@@ -46,4 +46,19 @@ function buildCategoryList($categories)
     }
     $catList .= '</select>';
     return $catList;
+}
+
+function buildProductsDisplay($products)
+{
+    $pd = '<ul id="prod-display">';
+    foreach ($products as $product) {
+        $pd .= '<li>';
+        $pd .= "<img src='$product[invThumbnail]' alt='Image of $product[invName] on Acme.com'>";
+        $pd .= '<hr>';
+        $pd .= "<h2>$product[invName]</h2>";
+        $pd .= "<span>$product[invPrice]</span>";
+        $pd .= '</li>';
+    }
+    $pd .= '</ul>';
+    return $pd;
 }

@@ -220,6 +220,23 @@ switch ($action) {
     break;
 
 
+  case 'category':
+
+    $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
+    $products = getProductsByCategoryName($categoryName);
+    if (!count($products)) {
+      $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
+    } else {
+      $prodDisplay = buildProductsDisplay($products);
+    }
+
+    echo $prodDisplay;
+    exit;
+
+    include '../view/category.php';
+    break;
+
+
   default:
 
     $categoryList = buildCategoryList($categories);
