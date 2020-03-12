@@ -230,8 +230,8 @@ switch ($action) {
       $prodDisplay = buildProductsDisplay($products);
     }
 
-    echo $prodDisplay;
-    exit;
+    // echo $prodDisplay;
+    // exit;
 
     include '../view/category.php';
     break;
