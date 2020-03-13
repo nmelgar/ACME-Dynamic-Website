@@ -17,17 +17,21 @@
 
 
 /*--ALL AND BODY----------------------------------*/
-*{
+* {
     box-sizing: border-box;
 }
 
-body{
+*, *:before, *:after{
+    box-sizing: inherit;
+   }
+
+body {
     background-image: url(../images/site/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#container{
+#container {
     background: #ffffff;
     margin: 0 auto;
     max-width: 960px;
@@ -35,52 +39,53 @@ body{
 }
 
 /*--HEADER-----------------------------------------*/
-    /*--LOGO AND LOGIN--*/
-#logo{
+/*--LOGO AND LOGIN--*/
+#logo {
     height: auto;
     width: 120px;
 }
-#account{
+
+#account {
     height: auto;
     width: 25px;
 }
 
-.header{
+.header {
     height: 25%;
     overflow: hidden;
     padding: 10px 10px;
     font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.header-left{
+.header-left {
     float: left;
     width: 50%;
 }
 
-.header-right a{
+.header-right a {
     float: right;
-    font-size: 18px; 
+    font-size: 18px;
     padding: 12px;
     padding-top: 25px;
     text-decoration: none;
 }
 
-.header-right a:visited{
+.header-right a:visited {
     color: black;
 }
 
-.header-right a:link{
+.header-right a:link {
     color: black;
 }
 
-.header-left a{
+.header-left a {
     float: left;
     text-align: left;
     padding: 12px;
     padding-left: 0px;
 }
 
-.header-right{
+.header-right {
     float: right;
     width: 50%;
 }
@@ -93,7 +98,7 @@ nav {
     background-color: #DE2226;
 }
 
-nav a{
+nav a {
     color: #ffffff;
 }
 
@@ -102,6 +107,7 @@ nav ul {
     margin: 0;
     padding: 0;
 }
+
 nav li {
     font-size: 20px;
     list-style-type: none;
@@ -109,6 +115,7 @@ nav li {
     font-family: 'Baloo', sans-serif;
     font-size: 1em;
 }
+
 nav ul li a {
     display: block;
     text-decoration: none;
@@ -116,36 +123,36 @@ nav ul li a {
 }
 
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     nav {
         flex-flow: column wrap;
         padding: 0;
     }
 }
 
-nav li:hover{
+nav li:hover {
     background: #ffffff;
 }
 
-nav a:hover{
-    color:#de2226;
+nav a:hover {
+    color: #de2226;
 }
 
 
 /*--HEADINGS (H1, H2, H3)--*/
 
-h1{
+h1 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 40px;
     margin: -10px 10px 10px 10px;
 }
 
-h2{
+h2 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin: 0;
 }
 
-h3{
+h3 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     font-size: 22px;
     font-weight: bold;
@@ -155,99 +162,106 @@ h3{
 
 /*--MAIN AND COYOTE ROCKET CONTENT--------------*/
 
-.coyoterocket{
+.coyoterocket {
     padding: 10px 10px;
     position: relative;
-    
+
 }
-.coyoterocket ul{
+
+.coyoterocket ul {
     color: #990033;
     font-size: 150%;
     text-align: left;
     padding: 0;
 }
 
-.coyoterocket ul{
+.coyoterocket ul {
     list-style: none;
 }
 
-.coyotetext-block{
+.coyotetext-block {
     position: absolute;
     right: 25px;
     top: 25px;
 }
 
-@media only screen and (max-width: 600px){
-    .coyotetext-block{
+@media only screen and (max-width: 600px) {
+    .coyotetext-block {
         position: absolute;
         right: 20px;
         top: 20px;
     }
-    .coyoterocket ul{
+
+    .coyoterocket ul {
         font-size: 110%;
     }
-    
-    .iwantit{
+
+    .iwantit {
         width: 100%;
         height: auto;
     }
 
 }
 
-main{
+main {
     overflow: hidden;
     padding: 10px 10px;
-/*    margin-bottom: -30px;*/
+    /*    margin-bottom: -30px;*/
 }
 
-.login-container{
+.login-container {
     text-align: center;
     align-content: center;
-    width:50%;
+    width: 50%;
     margin: 0 auto;
     padding: 10px;
     border: 2px solid #de2226;
 }
 
-input[type=submit]{
+input[type=submit] {
     background-color: #de2226;
-  border: none;
-  font-size: 20px;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 50%;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
 }
 
-input[type=email], input[type=password], input[type=text], input[type=number], input[type=string]{
-  width: 80%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+input[type=email],
+input[type=password],
+input[type=text],
+input[type=number],
+input[type=string] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-main a{
+main a {
     text-decoration: none;
     color: #de2226;
 }
-main a:hover{
+
+main a:hover {
     color: red;
 }
 
-    
-.coyoteimage{
+
+.coyoteimage {
     height: auto;
     width: 100%;
 }
 
 /*--SECTIONS----------------------------*/
-    /*CREATES TWO COLUMNS*/
-.column{
+/*CREATES TWO COLUMNS*/
+.column {
     float: left;
     height: 320px;
     overflow: hidden;
@@ -256,32 +270,32 @@ main a:hover{
 }
 
 .row:after {
-  clear: both;
-  content: "";
-  display: table;
+    clear: both;
+    content: "";
+    display: table;
 }
 
-#right-right li{
-    font-size:20px;
+#right-right li {
+    font-size: 20px;
 }
 
-@media only screen and (max-width: 600px){
-    .column{
+@media only screen and (max-width: 600px) {
+    .column {
         width: 100%;
         height: 300px;
     }
-    
-    #right-right{
+
+    #right-right {
         height: 250px;
         margin: auto;
     }
-    
-    #left-section table{
+
+    #left-section table {
         margin: auto;
     }
 }
 
-table{
+table {
     overflow: visible;
     padding: 10px;
 }
@@ -290,17 +304,18 @@ table tr {
     padding: 10px;
 }
 
-table th{
+table th {
     background: #949494;
     padding: 10px;
 }
-table a{
+
+table a {
     color: white;
     font-weight: 100;
     font-size: 14px;
 }
 
-table a:hover{
+table a:hover {
     color: blue;
 }
 
@@ -314,7 +329,7 @@ table a:hover{
 
 /*--DISPLAYS USER'S DATA--*/
 
-.user-data{
+.user-data {
     list-style: none;
     text-align: left;
 
@@ -326,15 +341,51 @@ table a:hover{
     border: 2px solid black;
 } */
 
-#productsDisplay a{
+#productsDisplay a {
     color: red;
 }
-#productsDisplay a:hover{
+
+#productsDisplay a:hover {
     color: blue;
 }
 
+#prod-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#prod-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#prod-display li img {
+    max-width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    #prod-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #prod-display li {
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        max-height: 400px;
+    }
+}
+
+
+
 /*--FOOTER------------------------------*/
-footer{
+footer {
     background: #ffffff;
     border-top: solid 4px #000000;
     font-family: 'Roboto', sans-serif;

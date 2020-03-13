@@ -17,7 +17,7 @@
             <?php echo $navList; ?>
         </nav>
         <main>
-            <div class="login-container">
+            <div>
                 <h1><?php echo $categoryName; ?> Products</h1>
                 <?php
                 if (isset($_SESSION['message'])) {
