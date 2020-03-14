@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>ACME | Admin</title>
@@ -71,4 +72,28 @@ function buildProductsDisplay($products)
     }
     $pd .= '</ul>';
     return $pd;
+}
+
+//Details for a sigle product
+function buildProductDisplay($productInfo)
+{
+    $prodinfo = $productInfo;
+    $dd = '<ul id="detail-display">';
+    $dd .= '<li>';
+    $dd .= "<img src='$prodinfo[invImage]' alt='Image of $prodinfo[invName] product on Acme.com'>";
+    $dd .= '</li>';
+    $dd .= '<li id="detail-description">';
+    $dd .= '<ul>';
+    $dd .= "<li id='detailDesc'> $prodinfo[invDescription]</li>";
+    $dd .= "<li id='detailVendor'>$prodinfo[invVendor]</li>";
+    $dd .= "<li id='detailStyle'>$prodinfo[invStyle]</li>";
+    $dd .= "<li id='detailWeight'>$prodinfo[invWeight]</li>";
+    $dd .= "<li id='detailSize'>$prodinfo[invSize]</li>";
+    $dd .= "<li id='detailLocation'>$prodinfo[invLocation]</li>";
+    $dd .= "<li id='detailStock'>$prodinfo[invStock]</li>";
+    $dd .= "<li id='detailPrice'>$prodinfo[invPrice]</li>";
+    $dd .= '</ul>';
+    $dd .= '</li>';
+    $dd .= '</ul>';
+    return $dd;
 }

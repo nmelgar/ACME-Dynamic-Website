@@ -250,7 +250,7 @@ main a {
 }
 
 main a:hover {
-    color: red;
+    color: #de2226;
 }
 
 
@@ -342,7 +342,7 @@ table a:hover {
 } */
 
 #productsDisplay a {
-    color: red;
+    color: #de2226;
 }
 
 #productsDisplay a:hover {
@@ -380,6 +380,25 @@ table a:hover {
         text-align: center;
         max-height: 400px;
     }
+}
+
+#detail-display{
+    list-style: none;
+}
+
+#detail-display img {
+    list-style: none;
+    max-width: 200px;
+    height: 200px;
+}
+
+#detailPrice{
+    font-size: 150%;
+    color: #de2226;
+}
+
+#detail-description ul{
+    list-style: none;
 }
 
 

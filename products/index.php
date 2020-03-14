@@ -189,7 +189,7 @@ switch ($action) {
 
 
   case 'del':
-    $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
     $prodInfo = getProductInfo($invId);
     if (count($prodInfo) < 1) {
       $_SESSION['message'] = 'Sorry, no product information could be found.';
@@ -225,7 +225,7 @@ switch ($action) {
     $categoryName = filter_input(INPUT_GET, 'categoryName', FILTER_SANITIZE_STRING);
     $products = getProductsByCategoryName($categoryName);
     if (!count($products)) {
-      $message = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
+      $_SESSION['message'] = "<p class='notice'>Sorry, no $categoryName products could be found.</p>";
     } else {
       $prodDisplay = buildProductsDisplay($products);
     }
@@ -234,6 +234,21 @@ switch ($action) {
     // exit;
 
     include '../view/category.php';
+    break;
+
+  case 'detail':
+
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+    $productInfo = getProductInfo($invId);
+
+    if (empty($productInfo)) {
+      $_SESSION['message'] = "Sorry, no product information could be found";
+    } else {
+      $productDisplay = buildProductDisplay($productInfo);
+    }
+
+    include '../view/product-detail.php';
+
     break;
 
 
