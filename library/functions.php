@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <title>ACME | Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
-</head>
-
-</html>
 <?php
 
 /**
@@ -41,6 +30,8 @@ function navList()
     $navList .= "<li><a href='/acme/index.php' title='View the Acme home page'>Home</a></li>";
     foreach ($categories as $category) {
         $navList .= "<li><a href='/acme/products/index.php?action=category&categoryName=" . urlencode($category['categoryName']) . "' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+        // $navList .= "<li><a href='/acme/products/index.php?action=category&amp;type=$category[categoryName]=' title='View our $category[categoryName] product line'>$category[categoryName]</a></li>";
+
     }
     $navList .= '</ul>';
 
