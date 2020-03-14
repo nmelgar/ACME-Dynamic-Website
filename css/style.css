@@ -373,6 +373,7 @@ table a:hover {
 }
 
 #prod-display li {
+    background-color: #fff3f1;
     margin: 10px;
     border: 1px #808080 solid;
     list-style-type: none;
@@ -404,9 +405,11 @@ table a:hover {
 }
 
 #detail-display{
+    font-size: 18px;
     justify-content: center;
     padding: 10px;
     border: 2px solid #808080;
+    background-color: #fff3f1;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -427,6 +430,14 @@ table a:hover {
 
 #detail-description ul{
     list-style: none;
+}
+
+#detailStock {
+    color: green;
+}
+
+#detailVendor {
+    color: steelblue;
 }
 
 
