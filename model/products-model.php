@@ -157,3 +157,14 @@ function getProductsByCategoryName($categoryName)
         $stmt->closeCursor();
         return $products;
 }
+
+// Get the list of products
+function getProductBasics() {
+        $db = acmeConnect();
+        $sql = 'SELECT invName, invId FROM inventory ORDER BY invName ASC';
+        $stmt = $db->prepare($sql);
+        $stmt->execute();
+        $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $products;
+   }
