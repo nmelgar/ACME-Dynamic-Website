@@ -60,9 +60,6 @@ switch ($action) {
             }
         }
 
-        // Store message to session
-        $_SESSION['message'] = $message;
-
         // Redirect to this controller for default action
         header('location: .');
 
