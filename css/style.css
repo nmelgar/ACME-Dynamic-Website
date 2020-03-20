@@ -419,8 +419,8 @@ table a:hover {
 
 #detail-display img {
     list-style: none;
-    max-width: 200px;
-    height: 200px;
+    max-width: 500px;
+    max-height: 500px;
 }
 
 #detailPrice{
@@ -440,6 +440,17 @@ table a:hover {
     color: steelblue;
 }
 
+/*--Image update------------------*/
+
+/* #img-update{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+
+} */
 
 
 /*--FOOTER------------------------------*/

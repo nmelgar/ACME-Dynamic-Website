@@ -28,7 +28,7 @@
                     unset($_SESSION['message']);
                 }
                 ?>
-
+                <!-- <div id="img-update"> -->
                 <form action="/acme/uploads/" method="post" enctype="multipart/form-data">
                     <label for="invItem">Product</label><br>
                     <?php echo $prodSelect; ?><br><br>
@@ -37,7 +37,7 @@
                     <input type="submit" class="regbtn" value="Upload">
                     <input type="hidden" name="action" value="upload">
                 </form>
-
+                <!-- </div> -->
                 <h2>Existing Images</h2>
                 <p class="notice">If deleting an image, delete the thumbnail too and vice versa.</p>
                 <?php
@@ -45,7 +45,7 @@
                     echo $imageDisplay;
                 } ?>
 
-
+               
 
             </div>
         </main>

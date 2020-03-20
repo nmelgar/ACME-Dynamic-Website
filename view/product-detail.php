@@ -27,23 +27,36 @@
                     unset($_SESSION['message']);
                 }
                 ?>
+
+                <?php
+                // For images with no thubnail
+                if (!file_exists($_SERVER['DOCUMENT_ROOT'] . $productInfo['invImage'])) {
+                    $image = '/acme/images/no-image.png';
+                } else {
+                    $image = $productInfo['invImage'];
+                }
+                ?>
+
                 <ul id="detail-display">
                     <li>
-                        <img src='<?php echo $productInfo['invImage'] ?>' alt='Image of <?php $productInfo['invName'] ?> product on Acme.com'>
+                        <img src='<?php echo $image ?>' alt='Image of <?php $productInfo['invName'] ?> product on Acme.com'>
                     </li>
                     <li id="detail-description">
                         <ul>
-                            <li id='detailDesc'><?php echo $productInfo['invDescription']?></li>
-                            <li id='detailVendor'>By <?php echo $productInfo['invVendor']?></li>
-                            <li>&nbsp;<li>
-                            <li id='detailStyle'>&#8658;Material: <?php echo $productInfo['invStyle']?></li>
+                            <li id='detailDesc'><?php echo $productInfo['invDescription'] ?></li>
+                            <li id='detailVendor'>By <?php echo $productInfo['invVendor'] ?></li>
+                            <li>&nbsp;
+                            <li>
+                            <li id='detailStyle'>&#8658;Material: <?php echo $productInfo['invStyle'] ?></li>
                             <li id='detailWeight'>&#8658;Weight: <?php echo $productInfo['invWeight'] ?> lbs.</li>
                             <li id='detailSize'>&#8658;Size: <?php echo $productInfo['invSize'] ?> W x H x L</li>
-                            <li>&nbsp;<li>
+                            <li>&nbsp;
+                            <li>
                             <li id='detailLocation'>At: <?php echo $productInfo['invLocation'] ?> warehouse</li>
-                            <li id='detailStock'>Only <?php echo $productInfo['invStock']?> In stock</li>
-                            <li>&nbsp;<li>
-                            <li id='detailPrice'>Price: $<?php echo $productInfo['invPrice']?></li>
+                            <li id='detailStock'>Only <?php echo $productInfo['invStock'] ?> In stock</li>
+                            <li>&nbsp;
+                            <li>
+                            <li id='detailPrice'>Price: $<?php echo $productInfo['invPrice'] ?></li>
                         </ul>
 
                     </li>
