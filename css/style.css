@@ -386,7 +386,7 @@ table a:hover {
 
 #prod-display li img {
     max-width: 200px;
-    height: 200px;
+    height: auto;
 }
 
 @media only screen and (max-width: 600px) {
@@ -489,8 +489,44 @@ table a:hover {
     }
 }
 
+/*--THUMBNAILS DISPLAY*/
+
+#thumb-display ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#thumb-display li {
+    background-color: #fff3f1;
+    margin: 10px;
+    border: 1px #808080 solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+    text-align: center;
+}
 
 
+#thumb-display li img {
+    max-width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    #thumb-display ul {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #thumb-display li {
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        max-height: 400px;
+    }
+}
 
 
 /*--FOOTER------------------------------*/
