@@ -159,7 +159,8 @@ function getProductsByCategoryName($categoryName)
 }
 
 // Get the list of products
-function getProductBasics() {
+function getProductBasics()
+{
         $db = acmeConnect();
         $sql = 'SELECT invName, invId FROM inventory ORDER BY invName ASC';
         $stmt = $db->prepare($sql);
@@ -167,4 +168,16 @@ function getProductBasics() {
         $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         return $products;
-   }
+}
+
+function getProductThumbnails($invId)
+{
+        $db = acmeConnect();
+        $sql = "SELECT * FROM images WHERE invId = :invId AND imgName LIKE '%-tn%'";
+        $stmt = $db->prepare($sql);
+        $stmt->bindValue('invId', $invId, PDO::PARAM_INT);
+        $stmt->execute();
+        $prodImages = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $prodImages;
+}

@@ -62,6 +62,15 @@
                     </li>
 
                 </ul>
+                <h2>Product Thumbnails</h2>
+                <ul id="thumb-display">
+                    <?php foreach ($productThumbnails as $thumbnails) { ?>
+                        <li>
+                            <img src='<?php echo $thumbnails['imgPath']; ?>' alt='Image of <?php echo $thumbnails['imgName']; ?> product on Acme.com'>
+                        </li>
+                    <?php } ?>
+
+                </ul>
 
 
 

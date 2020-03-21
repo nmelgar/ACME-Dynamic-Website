@@ -40,12 +40,14 @@
                 <!-- </div> -->
                 <h2>Existing Images</h2>
                 <p class="notice">If deleting an image, delete the thumbnail too and vice versa.</p>
-                <?php
-                if (isset($imageDisplay)) {
-                    echo $imageDisplay;
-                } ?>
+                <div id="img-update">
+                    <?php
+                    if (isset($imageDisplay)) {
+                        echo $imageDisplay;
+                    } ?>
+                </div>
 
-               
+
 
             </div>
         </main>

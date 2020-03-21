@@ -12,6 +12,8 @@ require_once '../library/connections.php';
 require_once '../model/acme-model.php';
 // Get the products model for use as needed
 require_once '../model/products-model.php';
+// Get the uploads model for use as needed
+require_once '../model/uploads-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
@@ -244,7 +246,8 @@ switch ($action) {
     if (empty($productInfo)) {
       $_SESSION['message'] = "Sorry, no product information could be found";
     } else {
-      $productDisplay = buildProductDisplay($productInfo);
+      $productThumbnails = getProductThumbnails($invId);
+      // $productDisplay = buildProductDisplay($productInfo);
     }
 
     include '../view/product-detail.php';

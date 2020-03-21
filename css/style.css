@@ -21,9 +21,11 @@
     box-sizing: border-box;
 }
 
-*, *:before, *:after{
+*,
+*:before,
+*:after {
     box-sizing: inherit;
-   }
+}
 
 body {
     background-image: url(../images/site/background.jpg);
@@ -261,12 +263,12 @@ main a:hover {
 
 /*--SECTIONS----------------------------*/
 /*CREATES TWO COLUMNS*/
-.row{
+.row {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    
+
 }
 
 .column {
@@ -288,7 +290,7 @@ main a:hover {
     font-size: 20px;
 }
 
-#right-right{
+#right-right {
     text-align: left;
     overflow: hidden;
     clear: both;
@@ -351,10 +353,7 @@ table a:hover {
 }
 
 /*--TABLE---*/
-/* #productsDisplay{
-    padding: 10px;;
-    border: 2px solid black;
-} */
+/*--PRODUCTS DISPLAY----------------------------*/
 
 #productsDisplay a {
     color: #de2226;
@@ -381,7 +380,7 @@ table a:hover {
     text-align: center;
 }
 
-#prod-display span{
+#prod-display span {
     color: #de2226;
 }
 
@@ -404,7 +403,7 @@ table a:hover {
     }
 }
 
-#detail-display{
+#detail-display {
     font-size: 18px;
     justify-content: center;
     padding: 10px;
@@ -423,12 +422,12 @@ table a:hover {
     max-height: 500px;
 }
 
-#detailPrice{
+#detailPrice {
     font-size: 150%;
     color: #de2226;
 }
 
-#detail-description ul{
+#detail-description ul {
     list-style: none;
 }
 
@@ -440,17 +439,58 @@ table a:hover {
     color: steelblue;
 }
 
-/*--Image update------------------*/
+/*--IMAGE UPDATE-----------------------------*/
 
-/* #img-update{
+#img-update a {
+    color: #de2226;
+}
+
+#img-update a:hover {
+    color: blue;
+}
+
+#img-update ul {
     display: flex;
     margin: 0;
     padding: 0;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+#img-update li {
+    background-color: #fff3f1;
+    margin: 10px;
+    border: 1px #808080 solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+#img-update span {
+    color: #de2226;
+}
+
+#img-update li img {
+    max-width: 200px;
+    height: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    #img-update ul {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #img-update li {
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        max-height: 400px;
+    }
+}
 
 
-} */
+
 
 
 /*--FOOTER------------------------------*/
