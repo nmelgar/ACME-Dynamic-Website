@@ -412,7 +412,7 @@ table a:hover {
     list-style: none;
     display: flex;
     flex-direction: row;
-    /* flex-wrap: wrap; */
+    /* flex-wrap: nowrap; */
     text-align: left;
 }
 
@@ -491,7 +491,7 @@ table a:hover {
 
 /*--THUMBNAILS DISPLAY*/
 
-#thumb-display ul {
+#thumb-display {
     display: flex;
     margin: 0;
     padding: 0;
