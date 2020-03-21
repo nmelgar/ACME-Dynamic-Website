@@ -30,7 +30,7 @@
                 ?>
                 <!-- <div id="img-update"> -->
                 <form action="/acme/uploads/" method="post" enctype="multipart/form-data">
-                    <label for="invItem">Product</label><br>
+                    <label id="invItem">Product</label><br>
                     <?php echo $prodSelect; ?><br><br>
                     <label>Upload Image:</label><br>
                     <input type="file" name="file1"><br>
