@@ -88,7 +88,7 @@
                     echo '<form action="/acme/reviews/index.php" method="post" id="review-form">' . "\n";
                     echo "<label for='reviewText'>Review this product as $screenName</label>" . "\n";
                     echo '<br>' . "\n";
-                    echo '<textarea cols="50" id="reviewText" name="reviewText" placeholder="Leave a product review here" required rows="5"></textarea>' . "\n";
+                    echo '<textarea cols="50" id="reviewText" name="reviewText" placeholder="Did you like this product? Tell us more..." required rows="5"></textarea>' . "\n";
                     echo '<br>' . "\n";
                     echo '<input class="button" name="submit" type="submit" value="Submit Review">' . "\n";
                     echo "<input type='hidden' name='clientId' value='$sessionClientDataClientId'>" . "\n";
@@ -106,7 +106,7 @@
                 if (count($itemReviews) > 0) {
                     echo $reviewsDisplay;
                 } else {
-                    echo '<p>This product has not been reviewed yet.</p>' . "\n";
+                    echo '<p>This product hasnt received reviews yet.</p>' . "\n";
                 }
                 ?>
 

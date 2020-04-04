@@ -528,6 +528,28 @@ table a:hover {
     }
 }
 
+/*--REVIEWS------------*/
+#reviews li{
+    border: solid 2px red;
+    text-align: center;
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+#reviews li a:hover{
+    color: blue;
+}
+
+#review-form{
+    text-align: center;
+}
+
+#product-reviews-table li{
+    list-style: none;
+    border: solid 1px grey;
+    margin-bottom: 8px;
+    padding: 5px;
+}
 
 /*--FOOTER------------------------------*/
 footer {

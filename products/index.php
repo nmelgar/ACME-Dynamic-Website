@@ -112,10 +112,7 @@ switch ($action) {
 
     break;
 
-    /* * ********************************** 
-    * Get Inventory Items by categoryId 
-    * Used for starting Update & delete process 
-    * ********************************** */
+    //Get Inventory Items by Id
   case 'getInventoryItems':
     // Get the categoryId 
     $categoryId = filter_input(INPUT_GET, 'categoryId', FILTER_SANITIZE_NUMBER_INT);

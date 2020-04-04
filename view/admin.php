@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ACME | Admin</title>
+    <title> Admin | Acme, Inc.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
 </head>
@@ -58,7 +58,7 @@
                 if (isset($reviewList)) {
                     echo $reviewList;
                 } else {
-                    echo "You haven't reviewed any products yet. When you do, they'll show up right here.";
+                    echo "You haven't done review to our products yet. When you do, they'll show here.";
                 }
                 ?>
 

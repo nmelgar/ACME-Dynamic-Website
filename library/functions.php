@@ -291,7 +291,7 @@ function showadminReview($reviews){
     $ar .= "<br>".substr($review['reviewText'],0,320). " ";
     $ar .= "<br>";
     $ar .= "<a href='/acme/reviews?action=deliver-review-edit&reviewId=" . urlencode($review['reviewId']) . " title='Edit your $review[invName] review'>Edit</a> ";
-    $ar .= "<a href='/acme/reviews?action=deliver-delete-review&reviewId=" . urlencode($review['reviewId']) . " title='Delete your $review[invName] review'>Delete</a>";
+    $ar .= "<a href='/acme/reviews?action=postDeleteReview&reviewId=" . urlencode($review['reviewId']) . " title='Delete your $review[invName] review'>Delete</a>";
     $ar .= '</li>';
     }
     $ar .= '</ul>';

@@ -18,9 +18,6 @@ $categories = getCategories();
 // Nav List
 $navList = navList($categories);
 
-//
-
-//
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
   $action = filter_input(INPUT_GET, 'action');
@@ -39,7 +36,7 @@ switch ($action) {
 
     if (empty($reviewText) || empty($invId) || empty($clientId)) {
       $message = '<p class="form-error">All fields are required.</p>';
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/product-details.php';
+      include '../view/product-details.php';
       exit;
     }
 
@@ -56,21 +53,19 @@ switch ($action) {
       $thumbnailDisplay = getProductThumbnails($productThumbnails);
       $reviewsDisplay = buildReviewDisplay($itemReviews);
 
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/product-detail.php';
+      include '../view/product-detail.php';
       //header('location: /acme/reviews/index.php');
     } else {
       $reviewFormMessage = '<p class="form-error">Oops, something wonky happened. Please try again.</p>';
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/product-detail.php';
+      include '../view/product-detail.php';
     }
     break;
-
-
 
     //
   case 'deliver-review-edit': //editRev
 
     $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
-    $reviewInfo = getReviewsCurrent($reviewId);
+    $reviewInfo = getCurrentReview($reviewId);
 
     if (empty($reviewId)) {
       $_SESSION['message'] = '<p>Sorry, the review was not found.</p>';
@@ -89,23 +84,21 @@ switch ($action) {
     include '../view/review-edit.php';
     break;
 
-
-
     //
-  case 'process-edit-review': //editReview
+  case 'processEditReviewview': //editReview
     $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
     $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
 
     $review = getReview($reviewId);
     if (empty($review)) {
       $_SESSION['message'] = '<p class="form-error">All fields are required.</p>';
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/review-edit.php';
+      include '../view/review-edit.php';
       exit;
     }
 
     if (empty($reviewText)) {
       $_SESSION['message'] = '<p class="form-error">All fields are required.</p>';
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/review-edit.php';
+      include '../view/review-edit.php';
       exit;
     }
 
@@ -116,21 +109,16 @@ switch ($action) {
       $_SESSION['message'] = $editMessage;
       header('location: /acme/accounts/');
     } else {
-      $_SESSION['message'] = "<p class='form-error'>Sorry, it wasn't possible to edit it. Please try again.</p>";
+      $_SESSION['message'] = "<p class='form-error'>Edited Correctly :)</p>";
       header('location: /acme/accounts/');
       exit;
     }
     break;
 
-
-
     //
-  case 'deliver-delete-review':
+  case 'postDeleteReview':
     $reviewId = filter_input(INPUT_GET, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
-
-    $reviewInfo = getReviewsCurrent($reviewId);
-
-
+    $reviewInfo = getCurrentReview($reviewId);
     if (empty($reviewId)) {
       $_SESSION['message'] = "<p class='form-error'>No review found</p>";
       header('location: /acme/accounts/');
@@ -143,13 +131,11 @@ switch ($action) {
       exit;
     }
 
-    include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/review-delete.php';
+    include '../view/review-delete.php';
     break;
 
-
-
     // Delete REVIEW
-  case 'process-review-delete':
+  case 'processDeleteReview':
     $reviewId = filter_input(INPUT_POST, 'reviewId', FILTER_SANITIZE_NUMBER_INT);
     $review = getReview($reviewId);
 
@@ -162,11 +148,11 @@ switch ($action) {
     $deleteResult = deleteReview($reviewId);
 
     if ($deleteResult < 1) {
-      $message = "<p class='form-error'>Oops, review was not deleted. Try again.</p>";
+      $message = "<p class='form-error'>Review was not deleted!  Try again please.</p>";
       $_SESSION['message'] = $message;
-      include $_SERVER['DOCUMENT_ROOT'] . '/acme/view/review-delete.php';
+      include '../view/review-delete.php';
     } else {
-      $message = "<p class='success-message'>Review deleted!</p>";
+      $message = "<p class='success-message'>Review deleted successfully!</p>";
       $_SESSION['message'] = $message;
       header('location: /acme/accounts/');
       exit;

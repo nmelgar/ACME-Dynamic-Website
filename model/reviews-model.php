@@ -15,7 +15,8 @@ functions I need for review :
 
 //add new review 
 
-function newReview($reviewText, $invId, $clientId) {
+function newReview($reviewText, $invId, $clientId)
+{
   $db = acmeConnect();
   $sql = 'INSERT INTO reviews (reviewText, invId, clientId) VALUES (:reviewText, :invId, :clientId)';
   $stmt = $db->prepare($sql);
@@ -23,10 +24,8 @@ function newReview($reviewText, $invId, $clientId) {
   $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
   $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
   $stmt->execute();
-
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
-
   return $rowsChanged;
 }
 
@@ -34,66 +33,50 @@ function newReview($reviewText, $invId, $clientId) {
 
 //update a specific review 
 
-function updateReview($reviewText, $reviewId) {
+function updateReview($reviewText, $reviewId)
+{
   $db = acmeConnect();
   $sql = 'UPDATE reviews SET reviewText = :reviewText WHERE reviewId = :reviewId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':reviewText', $reviewText, PDO::PARAM_STR);
   $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
   $stmt->execute();
-
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
-
   return $rowsChanged;
 }
 
-
-
-
-
 //delete a specific review 
 
-function deleteReview($reviewId) {
+function deleteReview($reviewId)
+{
   $db = acmeConnect();
   $sql = 'DELETE FROM reviews WHERE reviewId = :reviewId';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':reviewId', $reviewId, PDO::PARAM_INT);
   $stmt->execute();
-
   $rowsChanged = $stmt->rowCount();
   $stmt->closeCursor();
-
   return $rowsChanged;
 }
 
-
-
-
-
-
-
 // get reviews for a specific inventory item 
 
-function getItemReviews($invId) {
+function getItemReviews($invId)
+{
   $db = acmeConnect();
   $sql = 'SELECT reviews.*, clients.* FROM reviews INNER JOIN clients ON reviews.clientId = clients.clientId WHERE invId = :invId ORDER BY reviewDate DESC';
   $stmt = $db->prepare($sql);
   $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
   $stmt->execute();
-
   $itemReviews = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
-
   return $itemReviews;
 }
 
-
-
-
-
 //get reviews written by the user
-function getClientReviews($clientId) {
+function getClientReviews($clientId)
+{
   $db = acmeConnect();
   $sql = 'SELECT * FROM reviews AS r INNER JOIN inventory AS i ON r.invId = i.invId WHERE r.clientId = :clientId ORDER BY clientId DESC';
   $stmt = $db->prepare($sql);
@@ -108,7 +91,8 @@ function getClientReviews($clientId) {
 
 
 //get a specific review 
-function getReview($reviewId) {
+function getReview($reviewId)
+{
   $db = acmeConnect();
   $sql = 'SELECT * FROM reviews WHERE reviewId = :reviewId ORDER BY reviewDate ASC';
   $stmt = $db->prepare($sql);
@@ -119,7 +103,9 @@ function getReview($reviewId) {
   return $review;
 }
 
-function getReviewsCurrent($reviewId){
+
+function getCurrentReview($reviewId)
+{
   $db = acmeConnect();
   $sql = 'SELECT * FROM reviews WHERE reviewId = :reviewId';
   $stmt = $db->prepare($sql);
@@ -128,6 +114,4 @@ function getReviewsCurrent($reviewId){
   $review = $stmt->fetch(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
   return $review;
-  }
-
-?>
+}

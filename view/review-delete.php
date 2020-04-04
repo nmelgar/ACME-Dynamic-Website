@@ -1,11 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>ACME | Admin</title>
+    <title> Review Delete | Acme, Inc.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="/acme/css/style.css">
 </head>
@@ -27,30 +25,30 @@
 
         <main>
 
+            <div class="login-container">
+                <h1>Delete Review</h1>
+                <p>Are you sure? This action cannot be undone!</p>
 
-            <h1>Delete Review</h1>
-            <p>Are you sure? This action cannot be undone!</p>
-
-            <p><a href="/acme/accounts/">&#8592; Back</a></p>
-            <form method="post" action="/acme/reviews/index.php" class="stacked-form">
-                <label for="reviewText">Review Content</label>
-                <textarea cols="50" id="reviewText" name="reviewText" disabled rows="5"><?php if (isset($reviewText)) {
-                                                                                            echo $reviewText;
-                                                                                        } else {
-                                                                                            echo $reviewInfo['reviewText'];
-                                                                                        } ?></textarea>
-                <br>
-                <input class="button" id="formButton" name="submit" type="submit" value="Delete review">
-                <input name="action" type="hidden" value="process-review-delete">
-                <input name="reviewId" type="hidden" value="<?php if (isset($reviewId)) {
-                                                                echo $reviewId;
-                                                            } ?>">
-                <input name="clientId" type="hidden" value="<?php if (isset($clientId)) {
-                                                                echo $clientId;
-                                                            } ?>">
-                <input name="invId" type="hidden" value=<?php echo "$reviewInfo[reviewText]" ?>>
-            </form>
-
+                <p><a href="/acme/accounts/">&#8592; Return</a></p>
+                <form method="post" action="/acme/reviews/index.php" class="stacked-form">
+                    <label for="reviewText">Review Content</label>
+                    <textarea cols="50" id="reviewText" name="reviewText" disabled rows="5"><?php if (isset($reviewText)) {
+                                                                                                echo $reviewText;
+                                                                                            } else {
+                                                                                                echo $reviewInfo['reviewText'];
+                                                                                            } ?></textarea>
+                    <br>
+                    <input class="button" id="formButton" name="submit" type="submit" value="Delete review">
+                    <input name="action" type="hidden" value="processDeleteReview">
+                    <input name="reviewId" type="hidden" value="<?php if (isset($reviewId)) {
+                                                                    echo $reviewId;
+                                                                } ?>">
+                    <input name="clientId" type="hidden" value="<?php if (isset($clientId)) {
+                                                                    echo $clientId;
+                                                                } ?>">
+                    <input name="invId" type="hidden" value=<?php echo "$reviewInfo[reviewText]" ?>>
+                </form>
+            </div>
         </main>
 
         <footer>
