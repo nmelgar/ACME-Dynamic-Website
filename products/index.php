@@ -14,6 +14,8 @@ require_once '../model/acme-model.php';
 require_once '../model/products-model.php';
 // Get the uploads model for use as needed
 require_once '../model/uploads-model.php';
+// Get the review model
+require_once '../model/reviews-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
@@ -242,14 +244,16 @@ switch ($action) {
 
     $invId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
     $productInfo = getProductInfo($invId);
+    $itemReviews = getItemReviews($invId);
+
 
     if (empty($productInfo)) {
       $_SESSION['message'] = "Sorry, no product information could be found";
     } else {
       $productThumbnails = getProductThumbnails($invId);
       // $productDisplay = buildProductDisplay($productInfo);
+      $reviewsDisplay = buildReviewDisplay($itemReviews);
     }
-
     include '../view/product-detail.php';
 
     break;

@@ -12,6 +12,8 @@ require_once '../library/connections.php';
 require_once '../model/acme-model.php';
 // Get the accounts model
 require_once '../model/accounts-model.php';
+// get the review model
+require_once '../model/reviews-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 
@@ -70,10 +72,8 @@ switch ($action) {
     $_SESSION['clientData'] = $clientData;
 
     // Send them to the admin view
-    include '../view/admin.php';
+    header('location: /acme/accounts/index.php');
     exit;
-
-    break;
 
     break;
   case 'registration':
@@ -126,6 +126,7 @@ switch ($action) {
       exit;
     }
     break;
+
 
   case 'updateClient';
     include '../view/client-update.php';
@@ -218,6 +219,20 @@ switch ($action) {
     break;
 
   default:
-    include '../view/admin.php';
-    break;
-}
+    
+
+if (isset($_SESSION['clientData'])){
+  $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+  if (!empty($reviews)) {
+  $reviewList = showadminReview($reviews);
+  }
+  }
+  if (isset($_SESSION['loggedin'])) {
+  include '../view/admin.php';
+  }
+  else
+  {
+  header('Location: /acme/index.php');
+  }
+  break;
+  }
