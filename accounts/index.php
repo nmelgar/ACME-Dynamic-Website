@@ -219,20 +219,18 @@ switch ($action) {
     break;
 
   default:
-    
 
-if (isset($_SESSION['clientData'])){
-  $reviews = getClientReviews($_SESSION['clientData']['clientId']);
-  if (!empty($reviews)) {
-  $reviewList = showadminReview($reviews);
-  }
-  }
-  if (isset($_SESSION['loggedin'])) {
-  include '../view/admin.php';
-  }
-  else
-  {
-  header('Location: /acme/index.php');
-  }
-  break;
-  }
+
+    if (isset($_SESSION['clientData'])) {
+      $reviews = getClientReviews($_SESSION['clientData']['clientId']);
+      if (!empty($reviews)) {
+        $reviewList = showadminReview($reviews);
+      }
+    }
+    if (isset($_SESSION['loggedin'])) {
+      include '../view/admin.php';
+    } else {
+      header('Location: /acme/index.php');
+    }
+    break;
+}

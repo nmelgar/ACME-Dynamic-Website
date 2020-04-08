@@ -145,7 +145,6 @@ function deleteProduct($invId)
 }
 
 //Get a list of products based on the category
-
 function getProductsByCategoryName($categoryName)
 {
         $db = acmeConnect();

@@ -93,7 +93,7 @@
                     echo '<input class="button" name="submit" type="submit" value="Submit Review">' . "\n";
                     echo "<input type='hidden' name='clientId' value='$sessionClientDataClientId'>" . "\n";
                     echo "<input type='hidden' name='invId' value='$invId'>" . "\n";
-                    echo '<input type="hidden" name="action" value="new-review">' . "\n";
+                    echo '<input type="hidden" name="action" value="newReview">' . "\n";
                     echo '</form>' . "\n";
                 } else {
                     echo "<p><a href='/acme/accounts/index.php?action=login'>Login</a> to review this product." . "\n";

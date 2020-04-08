@@ -265,11 +265,12 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height)
 
 
 
+//shows the review display 
 function buildReviewDisplay($itemReviews)
 {
-    $rd = '<ul id="product-reviews-table">';
+    $rd = '<ul id="prodRevTable">';
     foreach ($itemReviews as $review) {
-        $date = date("F jS, Y", strtotime($review['reviewDate']));
+        $date = date("l jS \of F Y h:i:s A", strtotime($review['reviewDate']));
         $firstName = substr($review['clientFirstname'], 0, 1);
         $lastName = $review['clientLastname'];
         $screenName = $firstName . $lastName;
@@ -282,18 +283,19 @@ function buildReviewDisplay($itemReviews)
 }
 
 //shows the reviews done by the user at admin.php
-function showadminReview($reviews){
-    $ar = '<ul id="reviews">';
+function showadminReview($reviews)
+{
+    $admRev = '<ul id="reviews">';
     foreach ($reviews as $review) {
-    $ar .= '<li>';
-    $ar .= "<span>".$review['invName']." </span>";
-    $ar .= "<span>".date('j F, Y', strtotime($review['reviewDate']))."</span> ";
-    $ar .= "<br>".substr($review['reviewText'],0,320). " ";
-    $ar .= "<br>";
-    $ar .= "<a href='/acme/reviews?action=deliver-review-edit&reviewId=" . urlencode($review['reviewId']) . " title='Edit your $review[invName] review'>Edit</a> ";
-    $ar .= "<a href='/acme/reviews?action=postDeleteReview&reviewId=" . urlencode($review['reviewId']) . " title='Delete your $review[invName] review'>Delete</a>";
-    $ar .= '</li>';
+        $admRev .= '<li>';
+        $admRev .= "<span>" . $review['invName'] . " </span>";
+        $admRev .= "<span>" . date('l jS \of F Y h:i:s A', strtotime($review['reviewDate'])) . "</span> ";
+        $admRev .= "<br>" . substr($review['reviewText'], 0, 320) . " ";
+        $admRev .= "<br>";
+        $admRev .= "<a href='/acme/reviews?action=deliver-review-edit&reviewId=" . urlencode($review['reviewId']) . " title='Edit your $review[invName] review'>Edit</a> ";
+        $admRev .= "<a href='/acme/reviews?action=postDeleteReview&reviewId=" . urlencode($review['reviewId']) . " title='Delete your $review[invName] review'>Delete</a>";
+        $admRev .= '</li>';
     }
-    $ar .= '</ul>';
-    return $ar;
-    }
+    $admRev .= '</ul>';
+    return $admRev;
+}

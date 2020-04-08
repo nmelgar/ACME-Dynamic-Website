@@ -544,7 +544,7 @@ table a:hover {
     text-align: center;
 }
 
-#product-reviews-table li{
+#prodRevTable li{
     list-style: none;
     border: solid 1px grey;
     margin-bottom: 8px;

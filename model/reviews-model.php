@@ -3,7 +3,7 @@
 //Review model
 
 /*
-functions I need for review :
+needed functions for the review :
   -. add a review
   -. get reviews for a specific inventory item
   -. get reviews written by the user
@@ -14,7 +14,6 @@ functions I need for review :
 
 
 //add new review 
-
 function newReview($reviewText, $invId, $clientId)
 {
   $db = acmeConnect();
@@ -32,7 +31,6 @@ function newReview($reviewText, $invId, $clientId)
 
 
 //update a specific review 
-
 function updateReview($reviewText, $reviewId)
 {
   $db = acmeConnect();
@@ -47,7 +45,6 @@ function updateReview($reviewText, $reviewId)
 }
 
 //delete a specific review 
-
 function deleteReview($reviewId)
 {
   $db = acmeConnect();
@@ -61,7 +58,6 @@ function deleteReview($reviewId)
 }
 
 // get reviews for a specific inventory item 
-
 function getItemReviews($invId)
 {
   $db = acmeConnect();
